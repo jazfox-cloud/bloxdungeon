@@ -1,0 +1,79 @@
+import type { Metadata } from "next";
+import PageShell from "@/components/PageShell";
+import StatusTable from "@/components/StatusTable";
+import { gameSnapshot } from "@/content/site";
+import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Iron Soul: Dungeon Codes",
+  description: "Verified Iron Soul: Dungeon codes status, last checked date, source policy, and safe redemption notes without fake code lists.",
+  path: "/codes/",
+  keywords: ["iron soul dungeon codes", "codes for iron soul", "roblox iron soul dungeon codes"]
+});
+
+export default function CodesPage() {
+  const faq = faqJsonLd([
+    {
+      question: "Are there verified active Iron Soul: Dungeon codes right now?",
+      answer: "BloxDungeon only lists codes after they are verified from official or community-visible sources. If no code is verified, this page shows a no verified active codes state."
+    },
+    {
+      question: "Why not copy every code from YouTube titles?",
+      answer: "Video titles are demand signals, not proof. We do not publish a code as active unless the code itself and its status can be checked."
+    }
+  ]);
+
+  return (
+    <PageShell
+      eyebrow="Codes"
+      title="Iron Soul: Dungeon Codes"
+      description="A trust-first codes page for Iron Soul: Dungeon. We track demand and source checks, but we do not invent working codes."
+      path="/codes/"
+    >
+      <JsonLd data={faq} />
+      <div className="content">
+        <div className="notice trust">
+          <strong>No verified active codes right now.</strong>
+          <p>
+            Last checked {gameSnapshot.lastChecked}. We found strong codes search demand, but active-code
+            claims must be verified before appearing here.
+          </p>
+        </div>
+
+        <h2>Current Code Status</h2>
+        <StatusTable
+          rows={[
+            {
+              label: "Active codes",
+              status: "Pending verification",
+              note: "No active code is listed until the exact code and reward are verified."
+            },
+            {
+              label: "Expired codes",
+              status: "Not published yet",
+              note: "Expired lists will be added only when we have enough reliable code history."
+            },
+            {
+              label: "Source quality",
+              status: "Strict",
+              note: "YouTube titles can trigger a review, but they do not prove a code is working."
+            }
+          ]}
+        />
+
+        <h2>How We Check Codes</h2>
+        <p>
+          We look for official Roblox descriptions, developer-visible channels, in-game announcements,
+          and repeated community evidence. If a code cannot be traced, we leave it out.
+        </p>
+
+        <h2>After You Find Rerolls</h2>
+        <p>
+          Race rerolls and build choices are closely connected, so the next useful stop is the{" "}
+          <a href="/race-tier-list/">Race Tier List</a>. That page currently labels tier data as pending until
+          stronger evidence is collected.
+        </p>
+      </div>
+    </PageShell>
+  );
+}
