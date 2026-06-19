@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/"
     },
     sitemap: `${siteConfig.domain}/sitemap.xml`,
-    host: siteConfig.domain
+    host: "bloxdungeon.com"
   };
 }
