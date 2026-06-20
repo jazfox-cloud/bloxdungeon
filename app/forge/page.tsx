@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
-import { pageMetadata } from "@/lib/seo";
+import { forgeResearchRows, officialMechanics } from "@/content/iron-soul";
+import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Iron Soul: Dungeon Forge Guide",
@@ -11,6 +12,17 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function ForgePage() {
+  const faq = faqJsonLd([
+    {
+      question: "Is the Iron Soul: Dungeon forge confirmed by official sources?",
+      answer: "Yes. The official Roblox description describes collecting crystalized ore, bringing it to ancient forges, and crafting powerful weapons."
+    },
+    {
+      question: "Does BloxDungeon publish forge recipe costs?",
+      answer: "Not yet. Ore counts, recipes, and best-forge tables are held until they can be verified from in-game testing or a traceable source."
+    }
+  ]);
+
   return (
     <PageShell
       eyebrow="Forge"
@@ -18,6 +30,7 @@ export default function ForgePage() {
       description="The forge is the center of Iron Soul progression. This page separates verified crafting-loop basics from recipes still waiting on source-backed data."
       path="/forge/"
     >
+      <JsonLd data={faq} />
       <div className="content">
         <div className="notice">
           <strong>Recipe data is not complete yet.</strong>
@@ -29,16 +42,22 @@ export default function ForgePage() {
           The official Roblox description confirms a gather, forge, and upgrade loop where monsters drop
           rare materials and each forge run can change how your character fights.
         </p>
+        <StatusTable rows={officialMechanics.filter((item) => ["Forge loop", "Material drops", "Skill tree"].includes(item.label))} />
 
         <h2>Forge Data Roadmap</h2>
-        <StatusTable
-          rows={[
-            { label: "Ore sources", status: "Pending", note: "Needs in-game testing or reliable video evidence." },
-            { label: "Weapon recipes", status: "Pending", note: "No recipe table will be published without a source." },
-            { label: "Upgrade priority", status: "Drafting", note: "Can be written as strategy guidance before exact formulas are known." },
-            { label: "Best recipes", status: "Hold", note: "Best-recipe claims require repeatable evidence." }
-          ]}
-        />
+        <StatusTable rows={forgeResearchRows} />
+
+        <h2>Safe Forge Planning Before Exact Recipes</h2>
+        <p>
+          Until recipe costs are verified, the safest forge advice is to separate farming sessions from
+          upgrade sessions. Farm materials first, then decide whether your next run needs damage, survival,
+          or a weapon swap. That keeps the guide useful without pretending hidden formulas are known.
+        </p>
+        <p>
+          BloxDungeon will add ore tables, weapon recipes, and upgrade priorities only after each value has
+          a source note. If a value comes from testing rather than official text, it will be labeled as
+          community-tested.
+        </p>
 
         <h2>Useful Internal Links</h2>
         <p>

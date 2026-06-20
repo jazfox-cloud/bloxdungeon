@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
-import { pageMetadata } from "@/lib/seo";
+import { raceTierChecklist } from "@/content/iron-soul";
+import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Iron Soul: Dungeon Race Tier List",
@@ -11,6 +12,17 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function RaceTierListPage() {
+  const faq = faqJsonLd([
+    {
+      question: "Does BloxDungeon have a verified Iron Soul: Dungeon race tier list?",
+      answer: "Not yet. The tier list hub is live because players search for race rerolls, but race names, effects, and build context still need verification before ranks are published."
+    },
+    {
+      question: "What information is needed before ranking races?",
+      answer: "A complete race list, exact race effects, reroll method, and build context are required before any S-to-D ranking can be trusted."
+    }
+  ]);
+
   return (
     <PageShell
       eyebrow="Race Rerolls"
@@ -18,6 +30,7 @@ export default function RaceTierListPage() {
       description="Race reroll demand is real, but rankings need evidence. This page is prepared for tier data once the race list and build context are verified."
       path="/race-tier-list/"
     >
+      <JsonLd data={faq} />
       <div className="content">
         <div className="notice warning">
           <strong>Tier rankings are pending verification.</strong>
@@ -27,19 +40,29 @@ export default function RaceTierListPage() {
         </div>
 
         <h2>Tier List Requirements</h2>
-        <StatusTable
-          rows={[
-            { label: "Race names", status: "Pending", note: "Needs a source-backed race list." },
-            { label: "Race effects", status: "Pending", note: "Effects must be tied to in-game evidence or reliable community testing." },
-            { label: "Build context", status: "Required", note: "A race may rank differently for forge, survival, or damage builds." },
-            { label: "Reroll method", status: "Researching", note: "Codes and reroll methods need verification before being listed." }
-          ]}
-        />
+        <StatusTable rows={raceTierChecklist} />
 
         <h2>Why This Page Exists Early</h2>
         <p>
           YouTube search titles show active demand for race rerolls and race rankings. Publishing the hub now
           lets the site collect and organize evidence before pretending the ranking is settled.
+        </p>
+
+        <h2>How the First Real Ranking Will Work</h2>
+        <p>
+          Once the race list is verified, each race should be graded by role: damage pressure, dungeon safety,
+          forge-route value, and reroll cost. A single universal S tier is usually too vague for an RPG with
+          multiple build paths.
+        </p>
+        <p>
+          The first public table should include a source column and a last-checked date. If a ranking comes
+          from community testing instead of official text, the row should say so clearly.
+        </p>
+
+        <h2>Related Pages</h2>
+        <p>
+          Race rerolls connect closely to <a href="/codes/">codes</a>, <a href="/attributes/">attributes</a>,
+          and <a href="/runes/">runes</a>. Check those pages before spending rerolls on a build you have not planned.
         </p>
       </div>
     </PageShell>

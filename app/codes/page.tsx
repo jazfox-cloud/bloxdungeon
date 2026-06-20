@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
 import { gameSnapshot } from "@/content/site";
+import { codeCheckLog } from "@/content/iron-soul";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -20,6 +21,10 @@ export default function CodesPage() {
     {
       question: "Why not copy every code from YouTube titles?",
       answer: "Video titles are demand signals, not proof. We do not publish a code as active unless the code itself and its status can be checked."
+    },
+    {
+      question: "How often is this Iron Soul: Dungeon codes page checked?",
+      answer: "This page keeps a visible check log. The first public check was recorded on 2026-06-19, and new checks should be added around game updates or credible code claims."
     }
   ]);
 
@@ -61,11 +66,27 @@ export default function CodesPage() {
           ]}
         />
 
+        <h2>Daily Check Log</h2>
+        <StatusTable
+          rows={codeCheckLog.map((entry) => ({
+            label: entry.date,
+            status: entry.source,
+            note: entry.result
+          }))}
+        />
+
         <h2>How We Check Codes</h2>
         <p>
           We look for official Roblox descriptions, developer-visible channels, in-game announcements,
           and repeated community evidence. If a code cannot be traced, we leave it out.
         </p>
+
+        <h2>What Would Count as Verified?</h2>
+        <ul>
+          <li>A code shown in an official Roblox description, update note, or developer-controlled channel.</li>
+          <li>A code captured from the in-game redemption UI with a clear reward result.</li>
+          <li>A code confirmed by repeated recent community evidence, with stale claims moved out quickly.</li>
+        </ul>
 
         <h2>After You Find Rerolls</h2>
         <p>

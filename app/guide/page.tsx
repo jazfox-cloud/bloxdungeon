@@ -47,6 +47,11 @@ export default function GuidePage() {
           Start with <a href="/forge/">Forge</a>, then compare <a href="/runes/">Runes</a>,{" "}
           <a href="/attributes/">Attributes</a>, and <a href="/weapons/">Weapons</a>.
         </p>
+        <p>
+          If the grind starts feeling heavy, take a lighter Roblox break with our{" "}
+          <a href="/guide/casual-games/">casual games guide</a>, then come back when you are ready
+          to plan the next forge run.
+        </p>
       </div>
     </PageShell>
   );
