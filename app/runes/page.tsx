@@ -62,6 +62,13 @@ export default function RunesPage() {
           source type, and last checked date. That format will let players compare runes without hiding the
           evidence level behind a generic tier badge.
         </p>
+
+        <h2>Related Build Planning</h2>
+        <p>
+          Before ranking runes, choose a direction on the <a href="/skill-tree/">Skill Tree</a> page and
+          compare it with <a href="/attributes/">Attributes</a>, <a href="/materials/">Materials</a>, and{" "}
+          <a href="/dungeons/">Dungeons</a>.
+        </p>
       </div>
     </PageShell>
   );

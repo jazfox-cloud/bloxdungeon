@@ -36,7 +36,8 @@ export default function WeaponsPage() {
 
         <h2>Related Pages</h2>
         <p>
-          See <a href="/forge/">Forge</a> for crafting context, <a href="/attributes/">Attributes</a> for build direction,
+          See <a href="/forge/">Forge</a> and <a href="/materials/">Materials</a> for crafting context,{" "}
+          <a href="/skill-tree/">Skill Tree</a> and <a href="/attributes/">Attributes</a> for build direction,
           and <a href="/runes/">Runes</a> for upgrade planning.
         </p>
       </div>

@@ -44,8 +44,10 @@ export default function GuidePage() {
 
         <h2>Next Pages</h2>
         <p>
-          Start with <a href="/forge/">Forge</a>, then compare <a href="/runes/">Runes</a>,{" "}
-          <a href="/attributes/">Attributes</a>, and <a href="/weapons/">Weapons</a>.
+          Start with <a href="/dungeons/">Dungeons</a>, then plan <a href="/materials/">Materials</a>,{" "}
+          <a href="/forge/">Forge</a>, <a href="/skill-tree/">Skill Tree</a>,{" "}
+          <a href="/runes/">Runes</a>, <a href="/attributes/">Attributes</a>, and{" "}
+          <a href="/weapons/">Weapons</a>.
         </p>
         <p>
           If the grind starts feeling heavy, take a lighter Roblox break with our{" "}

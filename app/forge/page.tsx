@@ -61,8 +61,9 @@ export default function ForgePage() {
 
         <h2>Useful Internal Links</h2>
         <p>
-          Forge planning connects directly to <a href="/weapons/">Weapons</a>, <a href="/runes/">Runes</a>,
-          and <a href="/grinding/">XP and Coin Grinding</a>.
+          Forge planning connects directly to <a href="/materials/">Materials</a>,{" "}
+          <a href="/weapons/">Weapons</a>, <a href="/skill-tree/">Skill Tree</a>,{" "}
+          <a href="/runes/">Runes</a>, and <a href="/grinding/">XP and Coin Grinding</a>.
         </p>
       </div>
     </PageShell>

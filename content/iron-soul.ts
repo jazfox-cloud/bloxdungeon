@@ -1,4 +1,4 @@
-export const verificationDate = "2026-06-19";
+export const verificationDate = "2026-06-21";
 
 export const officialMechanics = [
   {
@@ -23,6 +23,75 @@ export const officialMechanics = [
   }
 ];
 
+export const dungeonRegions = [
+  {
+    label: "Dragon tombs",
+    status: "Officially described",
+    note: "The Roblox description names dragon tombs as one type of lost land players can enter."
+  },
+  {
+    label: "Ancient battlefields",
+    status: "Officially described",
+    note: "Ancient battlefields are listed as a dungeon region type, but exact routes and encounters are not public here yet."
+  },
+  {
+    label: "Ruins swallowed by time",
+    status: "Officially described",
+    note: "Ruins are confirmed as a dungeon setting. Boss names, HP, and loot tables still need separate evidence."
+  },
+  {
+    label: "Greater rewards",
+    status: "Officially described",
+    note: "The official page says clearing lingering darkness leads to greater rewards without listing exact drop rates."
+  }
+];
+
+export const skillTreePaths = [
+  {
+    label: "Relentless attacker",
+    status: "Officially described",
+    note: "A damage-focused path is named in the official description, but exact skill values remain unverified."
+  },
+  {
+    label: "Forge master",
+    status: "Officially described",
+    note: "The forge master direction connects skill choices to the crafting loop and material planning."
+  },
+  {
+    label: "Survivor built to last",
+    status: "Officially described",
+    note: "A survivor path is confirmed as a playstyle direction for harder dungeon attempts."
+  },
+  {
+    label: "Exact ability formulas",
+    status: "Needs evidence",
+    note: "Point costs, cooldowns, scaling, and best allocations should not be published until verified."
+  }
+];
+
+export const materialRows = [
+  {
+    label: "Crystalized ore",
+    status: "Officially described",
+    note: "The Roblox description says players collect crystalized ore and bring it to ancient forges."
+  },
+  {
+    label: "Rare materials",
+    status: "Officially described",
+    note: "Creature defeats are described as dropping rare materials, but individual item names and rates are not listed."
+  },
+  {
+    label: "Forge inputs",
+    status: "Partly verified",
+    note: "Ore and materials connect to crafting; exact recipe quantities still need in-game evidence."
+  },
+  {
+    label: "Drop tables",
+    status: "Not published",
+    note: "No boss or dungeon drop table should go live without source notes, dates, and testing context."
+  }
+];
+
 export const codeCheckLog = [
   {
     date: verificationDate,
@@ -32,7 +101,7 @@ export const codeCheckLog = [
   {
     date: verificationDate,
     source: "Roblox public game API",
-    result: "Game identity, creator, update time, visits, favorites, and current players were verified."
+    result: "Game identity, creator, update time, visits, favorites, and current players were refreshed."
   },
   {
     date: verificationDate,

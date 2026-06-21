@@ -23,12 +23,12 @@ export const gameSnapshot = {
   creatorType: "Roblox group with verified badge",
   genre: "RPG / Action RPG",
   created: "2026-03-20",
-  updated: "2026-06-19",
-  visits: "79.4M+",
-  playing: "10.4K+",
-  favorites: "125.8K+",
+  updated: "2026-06-20",
+  visits: "83.5M+",
+  playing: "13.7K+",
+  favorites: "131K+",
   maxPlayers: "16",
-  lastChecked: "2026-06-19",
+  lastChecked: "2026-06-21",
   robloxUrl: "https://www.roblox.com/games/117533937949084/Iron-Soul-Dungeon",
   robloxApiUrl: "https://games.roblox.com/v1/games?universeIds=9910245722"
 };
@@ -61,6 +61,9 @@ export const routes = [
   { path: "/codes/", title: "Iron Soul: Dungeon Codes", priority: 0.95, changeFrequency: "daily" },
   { path: "/guide/", title: "Iron Soul: Dungeon Beginner Guide", priority: 0.9, changeFrequency: "weekly" },
   { path: "/forge/", title: "Iron Soul: Dungeon Forge Guide", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/dungeons/", title: "Iron Soul: Dungeon Dungeons Guide", priority: 0.88, changeFrequency: "weekly" },
+  { path: "/skill-tree/", title: "Iron Soul: Dungeon Skill Tree and Builds", priority: 0.88, changeFrequency: "weekly" },
+  { path: "/materials/", title: "Iron Soul: Dungeon Materials and Crystalized Ore", priority: 0.86, changeFrequency: "weekly" },
   { path: "/runes/", title: "Iron Soul: Dungeon Runes Guide", priority: 0.85, changeFrequency: "weekly" },
   { path: "/attributes/", title: "Iron Soul: Dungeon Attributes Guide", priority: 0.85, changeFrequency: "weekly" },
   { path: "/race-tier-list/", title: "Iron Soul: Dungeon Race Tier List", priority: 0.85, changeFrequency: "weekly" },
@@ -85,6 +88,24 @@ export const pageCards = [
     title: "Forge",
     description: "A structured guide to the crafting loop, ore collection, forge runs, and upgrade planning.",
     tags: ["forge", "crafting", "materials"]
+  },
+  {
+    href: "/dungeons/",
+    title: "Dungeons",
+    description: "Officially described dungeon regions, prep logic, and what still needs boss-route verification.",
+    tags: ["dungeons", "dragon tombs", "prep"]
+  },
+  {
+    href: "/skill-tree/",
+    title: "Skill Tree",
+    description: "Attacker, forge master, and survivor build paths with clear boundaries around unverified formulas.",
+    tags: ["skill tree", "builds", "paths"]
+  },
+  {
+    href: "/materials/",
+    title: "Materials",
+    description: "Crystalized ore, rare materials, and the source-first checklist for future drop tables.",
+    tags: ["materials", "ore", "drops"]
   },
   {
     href: "/runes/",
