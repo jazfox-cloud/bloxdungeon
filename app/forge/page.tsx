@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
-import { forgeResearchRows, officialMechanics } from "@/content/iron-soul";
+import { evidenceGaps, forgeResearchRows, officialMechanics, progressionPathRows, verificationChecklist } from "@/content/iron-soul";
+import { gameSnapshot } from "@/content/site";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -20,6 +21,14 @@ export default function ForgePage() {
     {
       question: "Does BloxDungeon publish forge recipe costs?",
       answer: "Not yet. Ore counts, recipes, and best-forge tables are held until they can be verified from in-game testing or a traceable source."
+    },
+    {
+      question: "What should I decide before using the forge?",
+      answer: "Decide whether your current bottleneck is dungeon survival, damage, material farming, or weapon direction. The forge should solve a specific progression problem."
+    },
+    {
+      question: "How does the forge connect to the skill tree?",
+      answer: "The official description names attacker, forge master, and survivor paths. Forge choices should support whichever path solves your current dungeon problem."
     }
   ]);
 
@@ -34,7 +43,10 @@ export default function ForgePage() {
       <div className="content">
         <div className="notice">
           <strong>Recipe data is not complete yet.</strong>
-          <p>We will not publish ore counts, rarity claims, or best-recipes tables until those values are sourced.</p>
+          <p>
+            Last checked {gameSnapshot.lastChecked}. We will not publish ore counts, rarity claims,
+            or best-recipes tables until those values are sourced.
+          </p>
         </div>
 
         <h2>What Is Verified</h2>
@@ -58,6 +70,19 @@ export default function ForgePage() {
           a source note. If a value comes from testing rather than official text, it will be labeled as
           community-tested.
         </p>
+
+        <h2>Forge Planning Flow</h2>
+        <p>
+          The safest path is to move from dungeon pressure to material goals, then use the forge as the
+          spending step. That keeps upgrades tied to a real problem instead of a rumored best recipe.
+        </p>
+        <StatusTable rows={progressionPathRows} />
+
+        <h2>Verification Rules for Future Forge Tables</h2>
+        <StatusTable rows={verificationChecklist} />
+
+        <h2>Data Still Held Back</h2>
+        <StatusTable rows={evidenceGaps.filter((item) => ["Recipe costs", "Drop rates"].includes(item.label))} />
 
         <h2>Useful Internal Links</h2>
         <p>

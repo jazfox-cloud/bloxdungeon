@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
-import { materialRows } from "@/content/iron-soul";
+import { evidenceGaps, materialRows, progressionPathRows, verificationChecklist } from "@/content/iron-soul";
+import { gameSnapshot } from "@/content/site";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -23,6 +24,16 @@ export default function MaterialsPage() {
       question: "Does this page list material drop rates?",
       answer:
         "Not yet. Exact drop rates, quantities, and boss-specific tables need source-backed testing before publication."
+    },
+    {
+      question: "How should I use materials before exact recipe costs are known?",
+      answer:
+        "Use materials as a planning layer: decide the dungeon goal, track whether you need ore or rare materials, then spend through the forge only when the upgrade solves a clear problem."
+    },
+    {
+      question: "What evidence is needed for a future material table?",
+      answer:
+        "Each material row needs a name, source, use case, last checked date, and a clear label showing whether the evidence is official or community-tested."
     }
   ]);
 
@@ -38,8 +49,8 @@ export default function MaterialsPage() {
         <div className="notice trust">
           <strong>Material categories are confirmed; quantities are not.</strong>
           <p>
-            Crystalized ore and rare materials appear in the official description. Specific counts,
-            rates, and recipe costs still need in-game evidence.
+            Last checked {gameSnapshot.lastChecked}. Crystalized ore and rare materials appear in the
+            official description. Specific counts, rates, and recipe costs still need in-game evidence.
           </p>
         </div>
 
@@ -77,6 +88,13 @@ export default function MaterialsPage() {
           ]}
         />
 
+        <h2>Progression Path</h2>
+        <p>
+          Materials are most useful when they sit inside a path: choose the dungeon problem, farm the material
+          goal, forge toward a weapon plan, then tune the skill tree around the result.
+        </p>
+        <StatusTable rows={progressionPathRows} />
+
         <h2>How Materials Connect to Progression</h2>
         <p>
           Materials sit between <a href="/dungeons/">dungeon runs</a> and <a href="/forge/">forge upgrades</a>.
@@ -90,6 +108,7 @@ export default function MaterialsPage() {
           last checked date are visible. That keeps the page useful for SEO without turning it into a copied
           rumor list.
         </p>
+        <StatusTable rows={[...verificationChecklist, ...evidenceGaps.filter((item) => ["Drop rates", "Recipe costs"].includes(item.label))]} />
       </div>
     </PageShell>
   );

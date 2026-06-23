@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
-import { dungeonRegions, officialMechanics } from "@/content/iron-soul";
+import { dungeonRegions, evidenceGaps, officialMechanics, progressionPathRows, verificationChecklist } from "@/content/iron-soul";
+import { gameSnapshot } from "@/content/site";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -23,6 +24,16 @@ export default function DungeonsPage() {
       question: "Does this page list boss HP or dungeon drop rates?",
       answer:
         "No. Boss HP, route maps, and drop rates are held until they can be verified from in-game testing or a traceable source."
+    },
+    {
+      question: "How should I prepare for Iron Soul: Dungeon dungeons?",
+      answer:
+        "Prepare around a weapon plan, material goal, and build direction. Those three choices matter more than copying an unverified route."
+    },
+    {
+      question: "When will boss and route tables be added?",
+      answer:
+        "They will be added only after boss names, mechanics, rewards, and source dates can be verified."
     }
   ]);
 
@@ -38,8 +49,8 @@ export default function DungeonsPage() {
         <div className="notice">
           <strong>Dungeon regions are confirmed; boss data is not.</strong>
           <p>
-            We can safely describe the official dungeon themes, but exact boss names, HP values,
-            route maps, and drop rates need stronger evidence before publication.
+            Last checked {gameSnapshot.lastChecked}. We can safely describe the official dungeon themes,
+            but exact boss names, HP values, route maps, and drop rates need stronger evidence before publication.
           </p>
         </div>
 
@@ -75,12 +86,21 @@ export default function DungeonsPage() {
           ]}
         />
 
+        <h2>Recommended Progression Path</h2>
+        <p>
+          Dungeons should set the target for the rest of your planning. If a dungeon is too slow, look at
+          damage and weapons. If it is too punishing, compare survivor choices. If upgrades are blocked,
+          return to materials and forge planning.
+        </p>
+        <StatusTable rows={progressionPathRows} />
+
         <h2>What We Will Add Later</h2>
         <p>
           The next useful dungeon upgrade is a source-backed boss and route table. Each row should include
           the dungeon name, encounter type, material rewards, source note, and last checked date. Until then,
           boss claims stay off this page.
         </p>
+        <StatusTable rows={evidenceGaps.filter((item) => ["Boss HP", "Drop rates"].includes(item.label))} />
 
         <h2>Related Pages</h2>
         <p>
@@ -90,7 +110,7 @@ export default function DungeonsPage() {
         </p>
 
         <h2>Source Boundary</h2>
-        <StatusTable rows={officialMechanics.filter((item) => item.label === "Dungeons")} />
+        <StatusTable rows={[...officialMechanics.filter((item) => item.label === "Dungeons"), ...verificationChecklist]} />
       </div>
     </PageShell>
   );

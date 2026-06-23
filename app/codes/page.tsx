@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
 import { gameSnapshot } from "@/content/site";
-import { codeCheckLog } from "@/content/iron-soul";
+import { codeCheckLog, evidenceGaps, verificationChecklist } from "@/content/iron-soul";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -24,7 +24,15 @@ export default function CodesPage() {
     },
     {
       question: "How often is this Iron Soul: Dungeon codes page checked?",
-      answer: "This page keeps a visible check log. The first public check was recorded on 2026-06-19, and new checks should be added around game updates or credible code claims."
+      answer: "This page keeps a visible check log and is refreshed around game updates, traffic spikes, or credible code claims. The latest check shown here is 2026-06-23."
+    },
+    {
+      question: "Where do Iron Soul: Dungeon code claims usually fail verification?",
+      answer: "Most weak claims fail because they repeat a video title or copied list without showing the exact code, reward, redemption result, or current active status."
+    },
+    {
+      question: "Will expired Iron Soul: Dungeon codes be listed?",
+      answer: "Yes, but only after there is enough reliable code history to separate active, expired, and unverified claims."
     }
   ]);
 
@@ -80,6 +88,7 @@ export default function CodesPage() {
           We look for official Roblox descriptions, developer-visible channels, in-game announcements,
           and repeated community evidence. If a code cannot be traced, we leave it out.
         </p>
+        <StatusTable rows={verificationChecklist} />
 
         <h2>What Would Count as Verified?</h2>
         <ul>
@@ -88,11 +97,19 @@ export default function CodesPage() {
           <li>A code confirmed by repeated recent community evidence, with stale claims moved out quickly.</li>
         </ul>
 
+        <h2>What Still Needs Evidence</h2>
+        <StatusTable rows={evidenceGaps.filter((item) => item.label === "Active codes")} />
+
         <h2>After You Find Rerolls</h2>
         <p>
           Race rerolls and build choices are closely connected, so the next useful stop is the{" "}
           <a href="/race-tier-list/">Race Tier List</a>. That page currently labels tier data as pending until
           stronger evidence is collected.
+        </p>
+        <p>
+          If you are planning progress before a real code appears, follow the path from{" "}
+          <a href="/materials/">Materials</a> to <a href="/forge/">Forge</a>, then compare{" "}
+          <a href="/skill-tree/">Skill Tree</a> choices before spending rerolls.
         </p>
       </div>
     </PageShell>

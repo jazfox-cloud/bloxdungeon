@@ -1,4 +1,4 @@
-export const verificationDate = "2026-06-21";
+export const verificationDate = "2026-06-23";
 
 export const officialMechanics = [
   {
@@ -107,6 +107,75 @@ export const codeCheckLog = [
     date: verificationDate,
     source: "Public search demand",
     result: "Codes and reroll queries exist, but no unverified code claim was promoted to active status."
+  }
+];
+
+export const verificationChecklist = [
+  {
+    label: "Official game page",
+    status: "High confidence",
+    note: "Use for game identity, creator, official description, public update text, and direct play link."
+  },
+  {
+    label: "Roblox public API",
+    status: "High confidence",
+    note: "Use for universe ID, root place ID, update timestamp, visits, favorites, playing count, and vote snapshots."
+  },
+  {
+    label: "In-game screenshot or test",
+    status: "Required for exact values",
+    note: "Needed before publishing codes, skill values, recipe costs, drop rates, boss HP, or item effects."
+  },
+  {
+    label: "Community claim",
+    status: "Signal only",
+    note: "Can trigger a review, but it is not enough to publish exact data without a source trail."
+  }
+];
+
+export const progressionPathRows = [
+  {
+    label: "Dungeons",
+    status: "Start here",
+    note: "Choose the content pressure you are preparing for before farming blindly."
+  },
+  {
+    label: "Materials",
+    status: "Farm with a goal",
+    note: "Track crystalized ore and rare materials around the next forge or weapon decision."
+  },
+  {
+    label: "Forge",
+    status: "Spend deliberately",
+    note: "Convert materials into weapon progress only after deciding what problem the build needs to solve."
+  },
+  {
+    label: "Skill Tree",
+    status: "Lock the role",
+    note: "Attacker, forge master, and survivor choices should match your dungeon and forge bottleneck."
+  }
+];
+
+export const evidenceGaps = [
+  {
+    label: "Boss HP",
+    status: "Not published",
+    note: "Needs repeatable in-game testing or reliable patch/source notes."
+  },
+  {
+    label: "Drop rates",
+    status: "Not published",
+    note: "Needs sample size, source date, and clear dungeon or enemy context."
+  },
+  {
+    label: "Recipe costs",
+    status: "Not published",
+    note: "Needs screenshot or test evidence for each material count."
+  },
+  {
+    label: "Active codes",
+    status: "Not published",
+    note: "Needs exact code, reward, redemption result, and current status."
   }
 ];
 
