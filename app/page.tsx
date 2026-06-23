@@ -33,6 +33,9 @@ export default function HomePage() {
               <Link className="button primary" href="/guide/">Start with the Guide</Link>
               <Link className="button" href="/codes/">Check Codes</Link>
               <Link className="button" href="/forge/">Forge Basics</Link>
+              <a className="button" href="https://risingblox.com/">
+                Explore RisingBlox
+              </a>
             </div>
           </div>
           <aside className="stat-panel" aria-label="Verified game snapshot">
@@ -96,6 +99,14 @@ export default function HomePage() {
               ))}
             </ul>
             <Link href="/sources/">Read the full verification policy</Link>
+          </div>
+          <div className="card">
+            <h2>Part of RisingBlox</h2>
+            <p>
+              BloxDungeon is the dedicated Iron Soul: Dungeon deep-dive. For broader Roblox trend tracking,
+              codes pages, and beginner guides across more games, visit{" "}
+              <a href="https://risingblox.com/">RisingBlox</a>.
+            </p>
           </div>
         </div>
       </section>

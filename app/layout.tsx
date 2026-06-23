@@ -56,6 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/race-tier-list/">Race Tier List</Link>
               <Link href="/weapons/">Weapons</Link>
               <Link href="/sources/">Sources</Link>
+              <a href="https://risingblox.com/">RisingBlox</a>
             </nav>
           </div>
         </header>
