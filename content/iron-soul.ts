@@ -1,4 +1,4 @@
-export const verificationDate = "2026-06-23";
+export const verificationDate = "2026-06-30";
 
 export const officialMechanics = [
   {
@@ -106,7 +106,7 @@ export const codeCheckLog = [
   {
     date: verificationDate,
     source: "Public search demand",
-    result: "Codes and reroll queries exist, but no unverified code claim was promoted to active status."
+    result: "Codes and reroll queries still exist, but no source-backed active code was promoted to active status."
   }
 ];
 

@@ -24,7 +24,7 @@ export default function CodesPage() {
     },
     {
       question: "How often is this Iron Soul: Dungeon codes page checked?",
-      answer: "This page keeps a visible check log and is refreshed around game updates, traffic spikes, or credible code claims. The latest check shown here is 2026-06-23."
+      answer: "This page keeps a visible check log and is refreshed around game updates, traffic spikes, or credible code claims. The latest check shown here is 2026-06-30."
     },
     {
       question: "Where do Iron Soul: Dungeon code claims usually fail verification?",

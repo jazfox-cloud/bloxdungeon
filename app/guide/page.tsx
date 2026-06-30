@@ -36,6 +36,7 @@ export default function GuidePage() {
 
         <h2>Recommended First Steps</h2>
         <ol>
+          <li>Use the <a href="/tools/progression-planner/">Progression Planner</a> if you are not sure whether your next step is dungeon prep, materials, forge, skill tree, or code checking.</li>
           <li>Play through early fights long enough to understand enemy pacing and material drops.</li>
           <li>Use forge upgrades deliberately instead of chasing every rumored recipe.</li>
           <li>Track whether your build needs damage, survivability, or utility before spending rerolls.</li>

@@ -333,8 +333,75 @@ tr:last-child td {
   max-width: 860px;
 }
 
+.content.wide {
+  max-width: 1000px;
+}
+
 .content > * + * {
   margin-top: 18px;
+}
+
+.planner {
+  display: grid;
+  gap: 16px;
+}
+
+.planner-panel,
+.planner-result {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.planner-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.planner-options.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.planner-option {
+  min-height: 104px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background: #fbfaf7;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.planner-option:hover,
+.planner-option.active {
+  border-color: var(--gold);
+  background: #fff8e8;
+}
+
+.planner-option strong,
+.planner-option span {
+  display: block;
+}
+
+.planner-option span {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.planner-result {
+  border-color: var(--gold);
+  background: #fffaf0;
+}
+
+.planner-result ol {
+  margin: 0;
+  padding-left: 22px;
 }
 
 .site-footer {
@@ -370,7 +437,9 @@ tr:last-child td {
 
   .hero-grid,
   .grid,
-  .grid.two {
+  .grid.two,
+  .planner-options,
+  .planner-options.three {
     grid-template-columns: 1fr;
   }
 

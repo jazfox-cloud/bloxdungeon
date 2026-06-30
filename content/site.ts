@@ -23,12 +23,12 @@ export const gameSnapshot = {
   creatorType: "Roblox group with verified badge",
   genre: "RPG / Action RPG",
   created: "2026-03-20",
-  updated: "2026-06-22",
-  visits: "87.7M+",
-  playing: "10.8K+",
-  favorites: "137.5K+",
+  updated: "2026-06-30",
+  visits: "102.2M+",
+  playing: "7.6K+",
+  favorites: "157.4K+",
   maxPlayers: "16",
-  lastChecked: "2026-06-23",
+  lastChecked: "2026-06-30",
   robloxUrl: "https://www.roblox.com/games/117533937949084/Iron-Soul-Dungeon",
   robloxApiUrl: "https://games.roblox.com/v1/games?universeIds=9910245722"
 };
@@ -60,6 +60,7 @@ export const routes = [
   { path: "/", title: "Iron Soul: Dungeon Guide", priority: 1.0, changeFrequency: "daily" },
   { path: "/codes/", title: "Iron Soul: Dungeon Codes", priority: 0.95, changeFrequency: "daily" },
   { path: "/guide/", title: "Iron Soul: Dungeon Beginner Guide", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/tools/progression-planner/", title: "Iron Soul: Dungeon Progression Planner", priority: 0.9, changeFrequency: "weekly" },
   { path: "/forge/", title: "Iron Soul: Dungeon Forge Guide", priority: 0.9, changeFrequency: "weekly" },
   { path: "/dungeons/", title: "Iron Soul: Dungeon Dungeons Guide", priority: 0.88, changeFrequency: "weekly" },
   { path: "/skill-tree/", title: "Iron Soul: Dungeon Skill Tree and Builds", priority: 0.88, changeFrequency: "weekly" },
@@ -88,6 +89,12 @@ export const pageCards = [
     title: "Forge",
     description: "A structured guide to the crafting loop, ore collection, forge runs, and upgrade planning.",
     tags: ["forge", "crafting", "materials"]
+  },
+  {
+    href: "/tools/progression-planner/",
+    title: "Progression Planner",
+    description: "A lightweight tool that turns your current bottleneck into the next guide, material, forge, or build step.",
+    tags: ["tool", "planner", "builds"]
   },
   {
     href: "/dungeons/",

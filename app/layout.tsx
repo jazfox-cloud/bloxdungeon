@@ -50,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
             <nav className="nav" aria-label="Main navigation">
               <Link href="/codes/">Codes</Link>
+              <Link href="/tools/progression-planner/">Planner</Link>
               <Link href="/guide/">Guide</Link>
               <Link href="/forge/">Forge</Link>
               <Link href="/runes/">Runes</Link>

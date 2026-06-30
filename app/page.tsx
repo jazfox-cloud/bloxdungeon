@@ -30,7 +30,8 @@ export default function HomePage() {
               visible community signals, and clearly labeled pending sections when gameplay values are not verified yet.
             </p>
             <div className="button-row">
-              <Link className="button primary" href="/guide/">Start with the Guide</Link>
+              <Link className="button primary" href="/tools/progression-planner/">Open Planner</Link>
+              <Link className="button" href="/guide/">Start with the Guide</Link>
               <Link className="button" href="/codes/">Check Codes</Link>
               <Link className="button" href="/forge/">Forge Basics</Link>
               <a className="button" href="https://risingblox.com/">
