@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
-import { raceTierChecklist } from "@/content/iron-soul";
+import { raceEvidenceRows, raceTierChecklist } from "@/content/iron-soul";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -42,10 +42,17 @@ export default function RaceTierListPage() {
         <h2>Tier List Requirements</h2>
         <StatusTable rows={raceTierChecklist} />
 
+        <h2>Best Race Evidence Status</h2>
+        <p>
+          Search demand for the best race and race rerolls is already visible, but the ranking itself still
+          needs a complete source trail. This section tracks what can be said now and what is still blocked.
+        </p>
+        <StatusTable rows={raceEvidenceRows} />
+
         <h2>Why This Page Exists Early</h2>
         <p>
-          YouTube search titles show active demand for race rerolls and race rankings. Publishing the hub now
-          lets the site collect and organize evidence before pretending the ranking is settled.
+          Search Console and YouTube-style search behavior show active demand for race rerolls and race rankings.
+          Publishing the hub now lets the site collect and organize evidence before pretending the ranking is settled.
         </p>
 
         <h2>How the First Real Ranking Will Work</h2>
@@ -57,6 +64,14 @@ export default function RaceTierListPage() {
         <p>
           The first public table should include a source column and a last-checked date. If a ranking comes
           from community testing instead of official text, the row should say so clearly.
+        </p>
+
+        <h2>How Race Rerolls Will Be Verified</h2>
+        <p>
+          Race reroll claims need the same proof standard as codes: the exact source, the reward or reroll
+          method, the result, and a last-checked date. If a reroll comes from a code, it belongs on the{" "}
+          <a href="/codes/">codes page</a> first; if it comes from an item or UI action, it needs a separate
+          screenshot or test note.
         </p>
 
         <h2>Related Pages</h2>

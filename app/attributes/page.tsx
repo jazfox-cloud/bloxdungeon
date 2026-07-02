@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
+import { attributeBuildRows } from "@/content/iron-soul";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Attributes Guide",
-  description: "Iron Soul: Dungeon attributes guide for planning attack, forge, and survivor-style builds with verified-data boundaries.",
+  title: "Iron Soul: Dungeon Best Attributes Guide",
+  description: "Iron Soul: Dungeon best attributes guide for attack, forge master, and survivor-style builds with verified-data boundaries.",
   path: "/attributes/",
-  keywords: ["iron soul dungeon attributes", "iron soul dungeon builds", "iron soul dungeon skill tree"]
+  keywords: ["iron soul dungeon attributes", "iron soul dungeon best attributes", "iron soul dungeon best stats"]
 });
 
 export default function AttributesPage() {
   return (
     <PageShell
       eyebrow="Attributes"
-      title="Iron Soul: Dungeon Attributes Guide"
+      title="Iron Soul: Dungeon Best Attributes Guide"
       description="Plan your build direction around attack, forging, or survival while exact attribute formulas remain under verification."
       path="/attributes/"
     >
@@ -33,6 +34,21 @@ export default function AttributesPage() {
             { label: "Attribute formulas", status: "Pending", note: "Do not publish numbers until tested or sourced." }
           ]}
         />
+
+        <h2>Best Attributes by Build Direction</h2>
+        <p>
+          The safest answer to "best attributes" is role-based. Iron Soul: Dungeon has attack, forge, and
+          survival pressure, so a good stat plan should start with the problem your current runs are failing
+          to solve.
+        </p>
+        <StatusTable rows={attributeBuildRows} />
+
+        <h2>How to Pick Your Next Stat Focus</h2>
+        <p>
+          If clears are slow, compare attacker choices first. If upgrades are blocked, plan around forge and
+          material efficiency. If dungeon attempts end early, prioritize survival before chasing damage.
+          Exact point spreads will be added only when the formulas or in-game results are source-backed.
+        </p>
 
         <h2>Best Next Step</h2>
         <p>

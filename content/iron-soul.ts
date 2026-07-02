@@ -202,6 +202,57 @@ export const forgeResearchRows = [
   }
 ];
 
+export const forgeRecipeTrackerRows = [
+  {
+    label: "Forge recipe system",
+    status: "Verified concept",
+    note: "The official description confirms collecting crystalized ore and using ancient forges to craft weapons."
+  },
+  {
+    label: "Iron Soul Dungeon forge recipe",
+    status: "Search-confirmed demand",
+    note: "Search Console shows players looking for forge recipes, so this page tracks recipe evidence without publishing unsourced costs."
+  },
+  {
+    label: "Crafting recipe table",
+    status: "Held for evidence",
+    note: "A recipe table will be added only when each weapon, material name, and quantity has a screenshot or test note."
+  },
+  {
+    label: "Weapon recipe claims",
+    status: "Needs source trail",
+    note: "Individual weapon recipes are not treated as verified until the exact in-game recipe panel or reliable update note is available."
+  },
+  {
+    label: "Staff recipe / special recipes",
+    status: "Watchlist",
+    note: "Specific recipe queries are monitored, but special recipe names remain off the guide until they can be confirmed."
+  }
+];
+
+export const attributeBuildRows = [
+  {
+    label: "Best attributes for attacker",
+    status: "Role guidance",
+    note: "Use this direction when dungeon clears feel too slow. Exact damage scaling and point breakpoints are still pending."
+  },
+  {
+    label: "Best attributes for forge master",
+    status: "Role guidance",
+    note: "Use this direction when your main bottleneck is material planning, crafting progress, or weapon upgrade timing."
+  },
+  {
+    label: "Best attributes for survivor",
+    status: "Role guidance",
+    note: "Use this direction when runs fail because you cannot stay alive long enough to finish dungeon objectives."
+  },
+  {
+    label: "Universal best stats",
+    status: "Not claimed",
+    note: "There is no source-backed universal stat build yet. Ranking stats without weapon, race, rune, and dungeon context would be misleading."
+  }
+];
+
 export const runeResearchRows = [
   {
     label: "Rune names",
@@ -245,6 +296,52 @@ export const raceTierChecklist = [
     label: "Tier context",
     status: "Required",
     note: "Ranks must explain whether they apply to damage, survival, forge efficiency, or dungeon clearing."
+  }
+];
+
+export const raceEvidenceRows = [
+  {
+    label: "Best race in Iron Soul Dungeon",
+    status: "Demand confirmed",
+    note: "Search Console shows best-race and race-tier-list queries, but ranking is paused until race names and effects are verified."
+  },
+  {
+    label: "Race reroll method",
+    status: "Needs verification",
+    note: "Reroll items, code rewards, or UI claims need an in-game screenshot, test result, or traceable source before they are listed."
+  },
+  {
+    label: "S-tier race claims",
+    status: "Blocked",
+    note: "A race cannot be placed in S tier until its effect, role fit, and comparison context are known."
+  },
+  {
+    label: "First ranking format",
+    status: "Ready",
+    note: "The first real table should compare race, effect, best role, source, and last checked date."
+  }
+];
+
+export const rareMaterialWatchlistRows = [
+  {
+    label: "Dragon Tear",
+    status: "Search signal only",
+    note: "Search Console shows player interest, but BloxDungeon has not verified the item source, drop route, or exact use yet."
+  },
+  {
+    label: "Dragon Horn",
+    status: "Search signal only",
+    note: "Related dragon-material queries are being monitored. No drop table is published until the material can be tied to evidence."
+  },
+  {
+    label: "Rare dungeon materials",
+    status: "Official concept",
+    note: "The official description confirms rare materials from creature defeats, but does not list exact item names or drop rates."
+  },
+  {
+    label: "Dungeon drop table",
+    status: "Held for evidence",
+    note: "Future rows need the dungeon, enemy or boss, reward, source note, sample context, and last checked date."
   }
 ];
 

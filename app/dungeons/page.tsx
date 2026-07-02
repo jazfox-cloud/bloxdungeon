@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
-import { dungeonRegions, evidenceGaps, officialMechanics, progressionPathRows, verificationChecklist } from "@/content/iron-soul";
+import {
+  dungeonRegions,
+  evidenceGaps,
+  officialMechanics,
+  progressionPathRows,
+  rareMaterialWatchlistRows,
+  verificationChecklist
+} from "@/content/iron-soul";
 import { gameSnapshot } from "@/content/site";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Iron Soul: Dungeon Dungeons Guide",
   description:
-    "Iron Soul: Dungeon dungeons guide covering verified dungeon region types, prep logic, and what boss or route data still needs evidence.",
+    "Iron Soul: Dungeon dungeons guide covering verified region types, rare material watchlist items, prep logic, and evidence boundaries.",
   path: "/dungeons/",
-  keywords: ["iron soul dungeon dungeons", "iron soul dungeon dragon tombs", "iron soul dungeon guide"]
+  keywords: ["iron soul dungeon dungeons", "iron soul dungeon dragon tear", "iron soul dungeon dragon tombs"]
 });
 
 export default function DungeonsPage() {
@@ -93,6 +100,14 @@ export default function DungeonsPage() {
           return to materials and forge planning.
         </p>
         <StatusTable rows={progressionPathRows} />
+
+        <h2>Dragon Tear and Rare Material Watchlist</h2>
+        <p>
+          Search Console is starting to surface rare-material queries such as Dragon Tear. Those terms are
+          useful signals, but they are not enough to publish a drop source, drop rate, or recipe use without
+          in-game evidence.
+        </p>
+        <StatusTable rows={rareMaterialWatchlistRows} />
 
         <h2>What We Will Add Later</h2>
         <p>
