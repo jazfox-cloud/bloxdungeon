@@ -24,7 +24,7 @@ export default function CodesPage() {
     },
     {
       question: "How often is this Iron Soul: Dungeon codes page checked?",
-      answer: "This page keeps a visible check log and is refreshed around game updates, traffic spikes, or credible code claims. The latest check shown here is 2026-06-30."
+      answer: "This page keeps a visible check log and is refreshed around game updates, traffic spikes, or credible code claims. The latest check shown here is 2026-07-03."
     },
     {
       question: "Where do Iron Soul: Dungeon code claims usually fail verification?",
@@ -77,7 +77,7 @@ export default function CodesPage() {
         <h2>Daily Check Log</h2>
         <StatusTable
           rows={codeCheckLog.map((entry) => ({
-            label: entry.date,
+            label: `${entry.date} - ${entry.source}`,
             status: entry.source,
             note: entry.result
           }))}
