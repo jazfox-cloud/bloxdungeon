@@ -1,4 +1,7 @@
 export const verificationDate = "2026-07-03";
+export const gscReviewDate = "2026-07-05";
+export const gscCurrentWindow = "2026-06-27 to 2026-07-03";
+export const gscPreviousWindow = "2026-06-20 to 2026-06-26";
 
 export const officialMechanics = [
   {
@@ -258,6 +261,29 @@ export const attributeBuildRows = [
   }
 ];
 
+export const attributeOpportunityRows = [
+  {
+    label: "Best attributes",
+    status: "Existing demand",
+    note: "GSC still shows impressions for best attributes and best stats, but exact formulas remain unverified."
+  },
+  {
+    label: "Build direction answer",
+    status: "Safe to publish",
+    note: "Players can choose attacker, forge master, or survivor logic without needing fake point spreads."
+  },
+  {
+    label: "Best stats query",
+    status: "CTR opportunity",
+    note: "Use the phrase best stats, but answer it as role-based planning until source-backed stat values exist."
+  },
+  {
+    label: "Formula table",
+    status: "Held for evidence",
+    note: "Point costs, caps, scaling, and breakpoints need in-game testing before a numeric table is added."
+  }
+];
+
 export const runeResearchRows = [
   {
     label: "Rune names",
@@ -327,6 +353,29 @@ export const raceEvidenceRows = [
   }
 ];
 
+export const raceRecoveryRows = [
+  {
+    label: "Iron Soul Dungeon tier list",
+    status: "Lost impressions",
+    note: "GSC showed the broad tier-list query dropping out of the latest window, so the page now clarifies race, weapon, and build boundaries."
+  },
+  {
+    label: "Race tier list intent",
+    status: "Still relevant",
+    note: "Race-specific queries remain the correct focus for this URL; weapon-tier intent should be routed to the weapons page."
+  },
+  {
+    label: "Best race intent",
+    status: "Needs proof",
+    note: "The page can explain what makes a race good, but it cannot name a best race before race effects are verified."
+  },
+  {
+    label: "Reroll intent",
+    status: "Watchlist",
+    note: "Reroll methods are treated like code claims: source, result, and last-checked date are required."
+  }
+];
+
 export const rareMaterialWatchlistRows = [
   {
     label: "Dragon Tear",
@@ -347,6 +396,29 @@ export const rareMaterialWatchlistRows = [
     label: "Dungeon drop table",
     status: "Held for evidence",
     note: "Future rows need the dungeon, enemy or boss, reward, source note, sample context, and last checked date."
+  }
+];
+
+export const dungeonOpportunityRows = [
+  {
+    label: "Dungeons page",
+    status: "Growth opportunity",
+    note: "In GSC, this page gained impressions in the latest window but kept a low CTR, so the page now answers dungeon, Dragon Tear, and prep intent earlier."
+  },
+  {
+    label: "Dragon Tear",
+    status: "Search signal only",
+    note: "The query family is worth targeting, but the item source, drop rate, and recipe use are not published without evidence."
+  },
+  {
+    label: "Dragon Horn",
+    status: "Search signal only",
+    note: "Related dragon-material terms are monitored as a dungeon-material cluster, not as confirmed loot data."
+  },
+  {
+    label: "Boss route table",
+    status: "Next evidence target",
+    note: "A future table should include dungeon, boss or encounter, material reward, source note, and last checked date."
   }
 ];
 

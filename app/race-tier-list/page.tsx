@@ -1,14 +1,27 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
-import { raceEvidenceRows, raceTierChecklist } from "@/content/iron-soul";
+import {
+  gscCurrentWindow,
+  gscReviewDate,
+  raceEvidenceRows,
+  raceRecoveryRows,
+  raceTierChecklist
+} from "@/content/iron-soul";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Race Tier List",
-  description: "Iron Soul: Dungeon race tier list hub for race rerolls, build context, and verification status before public rankings.",
+  title: "Iron Soul: Dungeon Race Tier List and Best Race Guide",
+  description:
+    "Iron Soul: Dungeon race tier list and best race hub for race rerolls, build context, and verification status before public rankings.",
   path: "/race-tier-list/",
-  keywords: ["iron soul dungeon race tier list", "best race iron soul dungeon", "iron soul race rerolls"]
+  keywords: [
+    "iron soul dungeon race tier list",
+    "iron soul dungeon tier list",
+    "iron soul race tier list",
+    "best race iron soul dungeon",
+    "iron soul race rerolls"
+  ]
 });
 
 export default function RaceTierListPage() {
@@ -20,14 +33,19 @@ export default function RaceTierListPage() {
     {
       question: "What information is needed before ranking races?",
       answer: "A complete race list, exact race effects, reroll method, and build context are required before any S-to-D ranking can be trusted."
+    },
+    {
+      question: "Is this a weapon tier list?",
+      answer:
+        "No. This URL is for race and reroll intent. Weapon-tier queries should be answered on the weapons page once weapon effects and source notes are verified."
     }
   ]);
 
   return (
     <PageShell
       eyebrow="Race Rerolls"
-      title="Iron Soul: Dungeon Race Tier List"
-      description="Race reroll demand is real, but rankings need evidence. This page is prepared for tier data once the race list and build context are verified."
+      title="Iron Soul: Dungeon Race Tier List and Best Race Guide"
+      description="Race reroll and best-race demand are real, but rankings need evidence. This page is prepared for tier data once the race list and build context are verified."
       path="/race-tier-list/"
     >
       <JsonLd data={faq} />
@@ -35,9 +53,20 @@ export default function RaceTierListPage() {
         <div className="notice warning">
           <strong>Tier rankings are pending verification.</strong>
           <p>
-            We do not publish S-tier or D-tier race claims until the race name, effect, and testing context are traceable.
+            GSC review {gscReviewDate} for {gscCurrentWindow} shows the tier-list cluster lost visibility,
+            especially broad tier-list queries. We are tightening this page around race and reroll intent,
+            but we still do not publish S-tier or D-tier race claims until the race name, effect, and
+            testing context are traceable.
           </p>
         </div>
+
+        <h2>Search Recovery Focus</h2>
+        <p>
+          The page should win back the queries it can answer honestly: race tier list, best race, race rerolls,
+          and race effects. Broad weapon-tier or generic tier-list intent should be routed elsewhere instead
+          of weakening this page.
+        </p>
+        <StatusTable rows={raceRecoveryRows} />
 
         <h2>Tier List Requirements</h2>
         <StatusTable rows={raceTierChecklist} />

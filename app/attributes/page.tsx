@@ -1,25 +1,63 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
-import { attributeBuildRows } from "@/content/iron-soul";
-import { pageMetadata } from "@/lib/seo";
+import { attributeBuildRows, attributeOpportunityRows, gscCurrentWindow, gscReviewDate } from "@/content/iron-soul";
+import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Best Attributes Guide",
-  description: "Iron Soul: Dungeon best attributes guide for attack, forge master, and survivor-style builds with verified-data boundaries.",
+  title: "Iron Soul: Dungeon Best Attributes and Best Stats Guide",
+  description:
+    "Iron Soul: Dungeon best attributes and best stats guide for attack, forge master, and survivor-style builds with verified-data boundaries.",
   path: "/attributes/",
-  keywords: ["iron soul dungeon attributes", "iron soul dungeon best attributes", "iron soul dungeon best stats"]
+  keywords: [
+    "iron soul dungeon attributes",
+    "iron soul dungeon best attributes",
+    "iron soul dungeon best stats",
+    "iron soul attributes",
+    "iron soul stats"
+  ]
 });
 
 export default function AttributesPage() {
+  const faq = faqJsonLd([
+    {
+      question: "What are the best attributes in Iron Soul: Dungeon?",
+      answer:
+        "The safest current answer is role-based: attacker for slow clears, forge master for crafting and material bottlenecks, and survivor for failed dungeon attempts. Exact stat formulas are not published until verified."
+    },
+    {
+      question: "Does BloxDungeon publish exact stat formulas?",
+      answer:
+        "No. Point costs, scaling, caps, and breakpoints need in-game testing or a traceable source before they are listed."
+    }
+  ]);
+
   return (
     <PageShell
       eyebrow="Attributes"
-      title="Iron Soul: Dungeon Best Attributes Guide"
-      description="Plan your build direction around attack, forging, or survival while exact attribute formulas remain under verification."
+      title="Iron Soul: Dungeon Best Attributes and Best Stats Guide"
+      description="Plan your best stats around attack, forging, or survival while exact attribute formulas remain under verification."
       path="/attributes/"
     >
+      <JsonLd data={faq} />
       <div className="content">
+        <div className="notice">
+          <strong>Best-stats demand exists, but formulas are not verified.</strong>
+          <p>
+            GSC review {gscReviewDate} for {gscCurrentWindow} still shows impressions for attributes,
+            best attributes, and best stats. This page answers the build decision without inventing point
+            spreads, caps, or damage formulas.
+          </p>
+        </div>
+
+        <h2>Search Opportunity This Week</h2>
+        <p>
+          The page is already ranking around position 7 for the attributes cluster, so the next improvement
+          is clearer matching for "best attributes" and "best stats" queries while keeping the evidence line
+          visible.
+        </p>
+        <StatusTable rows={attributeOpportunityRows} />
+
         <h2>Build Directions</h2>
         <p>
           The official description mentions choosing abilities that fit your playstyle, including relentless

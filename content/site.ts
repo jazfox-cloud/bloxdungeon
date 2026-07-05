@@ -62,12 +62,12 @@ export const routes = [
   { path: "/guide/", title: "Iron Soul: Dungeon Beginner Guide", priority: 0.9, changeFrequency: "weekly" },
   { path: "/tools/progression-planner/", title: "Iron Soul: Dungeon Progression Planner", priority: 0.9, changeFrequency: "weekly" },
   { path: "/forge/", title: "Iron Soul: Dungeon Forge Recipe Guide", priority: 0.9, changeFrequency: "weekly" },
-  { path: "/dungeons/", title: "Iron Soul: Dungeon Dungeons Guide", priority: 0.88, changeFrequency: "weekly" },
+  { path: "/dungeons/", title: "Iron Soul: Dungeon Dungeons, Dragon Tear, and Rare Materials", priority: 0.88, changeFrequency: "weekly" },
   { path: "/skill-tree/", title: "Iron Soul: Dungeon Skill Tree and Builds", priority: 0.88, changeFrequency: "weekly" },
   { path: "/materials/", title: "Iron Soul: Dungeon Materials and Crystalized Ore", priority: 0.86, changeFrequency: "weekly" },
   { path: "/runes/", title: "Iron Soul: Dungeon Runes Guide", priority: 0.85, changeFrequency: "weekly" },
-  { path: "/attributes/", title: "Iron Soul: Dungeon Attributes Guide", priority: 0.85, changeFrequency: "weekly" },
-  { path: "/race-tier-list/", title: "Iron Soul: Dungeon Race Tier List", priority: 0.85, changeFrequency: "weekly" },
+  { path: "/attributes/", title: "Iron Soul: Dungeon Best Attributes and Best Stats", priority: 0.85, changeFrequency: "weekly" },
+  { path: "/race-tier-list/", title: "Iron Soul: Dungeon Race Tier List and Best Race", priority: 0.85, changeFrequency: "weekly" },
   { path: "/weapons/", title: "Iron Soul: Dungeon Weapons Guide", priority: 0.85, changeFrequency: "weekly" },
   { path: "/grinding/", title: "Iron Soul: Dungeon XP and Coin Grinding", priority: 0.8, changeFrequency: "weekly" },
   { path: "/updates/", title: "Iron Soul: Dungeon Updates", priority: 0.75, changeFrequency: "daily" },
@@ -99,8 +99,8 @@ export const pageCards = [
   {
     href: "/dungeons/",
     title: "Dungeons",
-    description: "Officially described dungeon regions, prep logic, and what still needs boss-route verification.",
-    tags: ["dungeons", "dragon tombs", "prep"]
+    description: "Dungeon regions, Dragon Tear watchlist notes, rare-material intent, and boss-route evidence boundaries.",
+    tags: ["dungeons", "Dragon Tear", "materials"]
   },
   {
     href: "/skill-tree/",
@@ -123,14 +123,14 @@ export const pageCards = [
   {
     href: "/attributes/",
     title: "Attributes",
-    description: "How to think about attack, survivability, and utility paths without inventing hidden formulas.",
-    tags: ["attributes", "skill tree", "builds"]
+    description: "Best attributes and best stats guidance for attacker, forge master, and survivor builds.",
+    tags: ["attributes", "best stats", "builds"]
   },
   {
     href: "/race-tier-list/",
     title: "Race Tier List",
-    description: "A pending-verification tier-list hub for race rerolls and community-tested build value.",
-    tags: ["race rerolls", "tier list", "evidence needed"]
+    description: "Best-race and race-tier-list hub with reroll evidence rules before public rankings.",
+    tags: ["best race", "tier list", "rerolls"]
   },
   {
     href: "/weapons/",
