@@ -103,7 +103,8 @@ export default function ForgePage() {
         <p>
           Forge planning connects directly to <a href="/materials/">Materials</a>,{" "}
           <a href="/weapons/">Weapons</a>, <a href="/skill-tree/">Skill Tree</a>,{" "}
-          <a href="/runes/">Runes</a>, and <a href="/grinding/">XP and Coin Grinding</a>.
+          <a href="/builds/">Builds</a>, <a href="/best-runes/">Best Runes</a>,{" "}
+          <a href="/relics/">Relics</a>, and <a href="/level-up-fast/">Level Up Fast</a>.
         </p>
       </div>
     </PageShell>

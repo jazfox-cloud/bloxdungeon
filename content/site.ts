@@ -24,11 +24,11 @@ export const gameSnapshot = {
   genre: "RPG / Action RPG",
   created: "2026-03-20",
   updated: "2026-07-03",
-  visits: "107.3M+",
-  playing: "7.9K+",
-  favorites: "163.6K+",
+  visits: "112.5M+",
+  playing: "7.2K+",
+  favorites: "169.8K+",
   maxPlayers: "16",
-  lastChecked: "2026-07-03",
+  lastChecked: "2026-07-06",
   robloxUrl: "https://www.roblox.com/games/117533937949084/Iron-Soul-Dungeon",
   robloxApiUrl: "https://games.roblox.com/v1/games?universeIds=9910245722"
 };
@@ -66,9 +66,13 @@ export const routes = [
   { path: "/skill-tree/", title: "Iron Soul: Dungeon Skill Tree and Builds", priority: 0.88, changeFrequency: "weekly" },
   { path: "/materials/", title: "Iron Soul: Dungeon Materials and Crystalized Ore", priority: 0.86, changeFrequency: "weekly" },
   { path: "/runes/", title: "Iron Soul: Dungeon Runes Guide", priority: 0.85, changeFrequency: "weekly" },
+  { path: "/best-runes/", title: "Iron Soul: Dungeon Best Runes Guide", priority: 0.85, changeFrequency: "weekly" },
   { path: "/attributes/", title: "Iron Soul: Dungeon Best Attributes and Best Stats", priority: 0.85, changeFrequency: "weekly" },
+  { path: "/builds/", title: "Iron Soul: Dungeon Best Builds Guide", priority: 0.85, changeFrequency: "weekly" },
   { path: "/race-tier-list/", title: "Iron Soul: Dungeon Race Tier List and Best Race", priority: 0.85, changeFrequency: "weekly" },
   { path: "/weapons/", title: "Iron Soul: Dungeon Weapons Guide", priority: 0.85, changeFrequency: "weekly" },
+  { path: "/relics/", title: "Iron Soul: Dungeon Relics Guide", priority: 0.82, changeFrequency: "weekly" },
+  { path: "/level-up-fast/", title: "Iron Soul: Dungeon How to Level Up Fast", priority: 0.82, changeFrequency: "weekly" },
   { path: "/grinding/", title: "Iron Soul: Dungeon XP and Coin Grinding", priority: 0.8, changeFrequency: "weekly" },
   { path: "/updates/", title: "Iron Soul: Dungeon Updates", priority: 0.75, changeFrequency: "daily" },
   { path: "/guide/casual-games/", title: "Roblox Casual Games After Iron Soul", priority: 0.65, changeFrequency: "monthly" },
@@ -121,16 +125,40 @@ export const pageCards = [
     tags: ["runes", "builds", "testing"]
   },
   {
+    href: "/best-runes/",
+    title: "Best Runes",
+    description: "Build-based best-rune guide for attacker, forge master, and survivor planning.",
+    tags: ["best runes", "GSC signal", "builds"]
+  },
+  {
     href: "/attributes/",
     title: "Attributes",
     description: "Best attributes and best stats guidance for attacker, forge master, and survivor builds.",
     tags: ["attributes", "best stats", "builds"]
   },
   {
+    href: "/builds/",
+    title: "Builds",
+    description: "Best-build framework connecting attributes, runes, weapons, race, and forge choices.",
+    tags: ["best build", "attributes", "runes"]
+  },
+  {
     href: "/race-tier-list/",
     title: "Race Tier List",
     description: "Best-race and race-tier-list hub with reroll evidence rules before public rankings.",
     tags: ["best race", "tier list", "rerolls"]
+  },
+  {
+    href: "/level-up-fast/",
+    title: "Level Up Fast",
+    description: "Progression-bottleneck guide for XP, dungeon pressure, forge timing, and safer grinding.",
+    tags: ["leveling", "XP", "progression"]
+  },
+  {
+    href: "/relics/",
+    title: "Relics",
+    description: "Relic watchlist and evidence requirements before names, effects, or farming routes go live.",
+    tags: ["relics", "watchlist", "evidence"]
   },
   {
     href: "/weapons/",

@@ -106,7 +106,8 @@ export default function RaceTierListPage() {
         <h2>Related Pages</h2>
         <p>
           Race rerolls connect closely to <a href="/codes/">codes</a>, <a href="/attributes/">attributes</a>,
-          and <a href="/runes/">runes</a>. Check those pages before spending rerolls on a build you have not planned.
+          <a href="/builds/">builds</a>, and <a href="/best-runes/">best runes</a>. Check those pages before
+          spending rerolls on a build you have not planned.
         </p>
       </div>
     </PageShell>

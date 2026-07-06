@@ -90,8 +90,9 @@ export default function AttributesPage() {
 
         <h2>Best Next Step</h2>
         <p>
-          Use this page with <a href="/skill-tree/">Skill Tree</a>,{" "}
-          <a href="/race-tier-list/">Race Tier List</a>, and <a href="/weapons/">Weapons</a>.
+          Use this page with <a href="/builds/">Builds</a>, <a href="/skill-tree/">Skill Tree</a>,{" "}
+          <a href="/race-tier-list/">Race Tier List</a>, <a href="/best-runes/">Best Runes</a>, and{" "}
+          <a href="/weapons/">Weapons</a>.
           A build is only meaningful when the race, weapon, rune, and attribute context are all visible.
         </p>
       </div>

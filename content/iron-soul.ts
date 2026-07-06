@@ -1,7 +1,8 @@
 export const verificationDate = "2026-07-03";
-export const gscReviewDate = "2026-07-05";
-export const gscCurrentWindow = "2026-06-27 to 2026-07-03";
-export const gscPreviousWindow = "2026-06-20 to 2026-06-26";
+export const gscReviewDate = "2026-07-06";
+export const gscCurrentWindow = "2026-06-28 to 2026-07-04";
+export const gscPreviousWindow = "2026-06-21 to 2026-06-27";
+export const gscDeepArticleWindow = "2026-06-07 to 2026-07-04";
 
 export const officialMechanics = [
   {
@@ -304,6 +305,103 @@ export const runeResearchRows = [
     label: "Best runes",
     status: "Not ranked",
     note: "A best-runes list would be misleading before weapon type, progression stage, and effect data are known."
+  }
+];
+
+export const bestRunesRows = [
+  {
+    label: "Iron Soul Dungeon runes",
+    status: "GSC signal",
+    note: "The 28-day GSC window shows rune queries, including a best-rune variant, but exact rune effects are not verified yet."
+  },
+  {
+    label: "Best rune answer",
+    status: "Build-dependent",
+    note: "A best-rune answer should be grouped by attacker, forge master, survivor, and dungeon-clear context instead of one unsourced universal rank."
+  },
+  {
+    label: "Rune effects",
+    status: "Held for evidence",
+    note: "Effect text, rarity, and upgrade values need screenshots, update notes, or repeatable tests before being published."
+  },
+  {
+    label: "First table format",
+    status: "Ready",
+    note: "Future rows should include rune name, effect, best role, source type, source date, and last checked date."
+  }
+];
+
+export const levelUpFastRows = [
+  {
+    label: "Fast leveling intent",
+    status: "Long-tail target",
+    note: "This page targets how-to-level-up-fast and XP-route searches while avoiding fake XP-per-hour claims."
+  },
+  {
+    label: "Dungeon pressure",
+    status: "Safe guidance",
+    note: "Use the dungeon you fail or clear too slowly as the signal for whether to improve damage, survival, or materials."
+  },
+  {
+    label: "Forge bottleneck",
+    status: "Safe guidance",
+    note: "If progress stalls because upgrades are blocked, route the player toward materials and forge planning before more grinding."
+  },
+  {
+    label: "XP rates",
+    status: "Held for evidence",
+    note: "No XP-per-minute, coin-per-hour, or best-route claim is published until it is tested or sourced."
+  }
+];
+
+export const relicResearchRows = [
+  {
+    label: "Relics",
+    status: "Watchlist",
+    note: "Relic demand is a planned deep-article target, but GSC has not shown a relic query cluster yet."
+  },
+  {
+    label: "Official confirmation",
+    status: "Needs evidence",
+    note: "Do not describe relic names, effects, rarity, or farming routes until the system is visible in a source."
+  },
+  {
+    label: "Related systems",
+    status: "Adjacent intent",
+    note: "Rare materials, Dragon Tear, Dragon Horn, forge inputs, and dungeon rewards are tracked as adjacent evidence."
+  },
+  {
+    label: "Publishable now",
+    status: "Evidence policy",
+    note: "The page can explain what will be required before BloxDungeon publishes a real relic list."
+  }
+];
+
+export const buildGuideRows = [
+  {
+    label: "Best build",
+    status: "GSC signal",
+    note: "The 28-day GSC window includes best-build, best-attributes, best-stats, and tier-list intent."
+  },
+  {
+    label: "Attacker build",
+    status: "Officially framed",
+    note: "The official description names a relentless attacker direction, but exact damage formulas are still pending."
+  },
+  {
+    label: "Forge master build",
+    status: "Officially framed",
+    note: "The forge master direction connects build choices to materials, recipes, and weapon upgrade timing."
+  },
+  {
+    label: "Survivor build",
+    status: "Officially framed",
+    note: "The survivor direction is safe to discuss as a dungeon-survival plan before exact values are known."
+  },
+  {
+    label: "Best-in-slot claims",
+    status: "Not claimed",
+    note: "No universal best build, race, rune, or weapon rank is published without effects, source notes, and testing context."
   }
 ];
 

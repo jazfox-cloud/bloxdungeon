@@ -55,6 +55,10 @@ export default function RunesPage() {
           Treat this as a research hub. If a rune claim appears without a source, it stays off the public table
           until confirmed.
         </p>
+        <p>
+          For searchers looking for a build answer, use the new <a href="/best-runes/">Best Runes</a> page.
+          It explains how rune value changes across attacker, forge master, survivor, and dungeon-clear goals.
+        </p>
 
         <h2>Planned Rune Table Format</h2>
         <p>
@@ -66,8 +70,8 @@ export default function RunesPage() {
         <h2>Related Build Planning</h2>
         <p>
           Before ranking runes, choose a direction on the <a href="/skill-tree/">Skill Tree</a> page and
-          compare it with <a href="/attributes/">Attributes</a>, <a href="/materials/">Materials</a>, and{" "}
-          <a href="/dungeons/">Dungeons</a>.
+          compare it with <a href="/builds/">Builds</a>, <a href="/attributes/">Attributes</a>,{" "}
+          <a href="/materials/">Materials</a>, and <a href="/dungeons/">Dungeons</a>.
         </p>
       </div>
     </PageShell>

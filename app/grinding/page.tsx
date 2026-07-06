@@ -33,6 +33,12 @@ export default function GrindingPage() {
             { label: "Beginner progression", status: "Safe to cover", note: "General sequence guidance can be written without exact rates." }
           ]}
         />
+
+        <h2>Leveling Deep Dive</h2>
+        <p>
+          For the long-tail leveling article, use <a href="/level-up-fast/">How to Level Up Fast</a>. It
+          turns dungeon failures, forge bottlenecks, and build direction into safer next-step decisions.
+        </p>
       </div>
     </PageShell>
   );
