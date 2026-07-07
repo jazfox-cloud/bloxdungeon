@@ -23,12 +23,12 @@ export const gameSnapshot = {
   creatorType: "Roblox group with verified badge",
   genre: "RPG / Action RPG",
   created: "2026-03-20",
-  updated: "2026-07-03",
-  visits: "112.5M+",
-  playing: "7.2K+",
-  favorites: "169.8K+",
+  updated: "2026-07-07",
+  visits: "113.5M+",
+  playing: "10.2K+",
+  favorites: "171.2K+",
   maxPlayers: "16",
-  lastChecked: "2026-07-06",
+  lastChecked: "2026-07-07",
   robloxUrl: "https://www.roblox.com/games/117533937949084/Iron-Soul-Dungeon",
   robloxApiUrl: "https://games.roblox.com/v1/games?universeIds=9910245722"
 };
@@ -61,7 +61,7 @@ export const routes = [
   { path: "/codes/", title: "Iron Soul: Dungeon Codes", priority: 0.95, changeFrequency: "daily" },
   { path: "/guide/", title: "Iron Soul: Dungeon Beginner Guide", priority: 0.9, changeFrequency: "weekly" },
   { path: "/tools/progression-planner/", title: "Iron Soul: Dungeon Progression Planner", priority: 0.9, changeFrequency: "weekly" },
-  { path: "/forge/", title: "Iron Soul: Dungeon Forge Recipe Guide", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/forge/", title: "Iron Soul: Dungeon Forge Recipe and Crafting Guide", priority: 0.9, changeFrequency: "weekly" },
   { path: "/dungeons/", title: "Iron Soul: Dungeon Dungeons, Dragon Tear, and Rare Materials", priority: 0.88, changeFrequency: "weekly" },
   { path: "/skill-tree/", title: "Iron Soul: Dungeon Skill Tree and Builds", priority: 0.88, changeFrequency: "weekly" },
   { path: "/materials/", title: "Iron Soul: Dungeon Materials and Crystalized Ore", priority: 0.86, changeFrequency: "weekly" },
@@ -74,7 +74,7 @@ export const routes = [
   { path: "/relics/", title: "Iron Soul: Dungeon Relics Guide", priority: 0.82, changeFrequency: "weekly" },
   { path: "/level-up-fast/", title: "Iron Soul: Dungeon How to Level Up Fast", priority: 0.82, changeFrequency: "weekly" },
   { path: "/grinding/", title: "Iron Soul: Dungeon XP and Coin Grinding", priority: 0.8, changeFrequency: "weekly" },
-  { path: "/updates/", title: "Iron Soul: Dungeon Updates", priority: 0.75, changeFrequency: "daily" },
+  { path: "/updates/", title: "Iron Soul: Dungeon Updates and Patch Review", priority: 0.75, changeFrequency: "daily" },
   { path: "/guide/casual-games/", title: "Roblox Casual Games After Iron Soul", priority: 0.65, changeFrequency: "monthly" },
   { path: "/sources/", title: "Sources and Verification Policy", priority: 0.7, changeFrequency: "weekly" },
   { path: "/about/", title: "About BloxDungeon", priority: 0.5, changeFrequency: "monthly" },
@@ -91,8 +91,8 @@ export const pageCards = [
   {
     href: "/forge/",
     title: "Forge",
-    description: "A structured guide to forge recipes, crafting evidence, ore collection, and upgrade planning.",
-    tags: ["forge", "recipe", "crafting"]
+    description: "Forge recipe, crafting recipe, forging-guide, ore collection, and upgrade-planning evidence.",
+    tags: ["forge recipe", "crafting", "forging"]
   },
   {
     href: "/tools/progression-planner/",
@@ -103,8 +103,8 @@ export const pageCards = [
   {
     href: "/dungeons/",
     title: "Dungeons",
-    description: "Dungeon regions, Dragon Tear watchlist notes, rare-material intent, and boss-route evidence boundaries.",
-    tags: ["dungeons", "Dragon Tear", "materials"]
+    description: "Dungeon regions, Dragon Tear and Dragon Horn watchlists, Discord checks, and boss-route evidence boundaries.",
+    tags: ["dungeons", "Dragon Tear", "Discord"]
   },
   {
     href: "/skill-tree/",

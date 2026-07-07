@@ -3,6 +3,7 @@ import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
 import {
   evidenceGaps,
+  forgeLongTailRows,
   forgeRecipeTrackerRows,
   forgeResearchRows,
   officialMechanics,
@@ -13,10 +14,17 @@ import { gameSnapshot } from "@/content/site";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Forge Recipe Guide",
-  description: "Iron Soul: Dungeon forge recipe guide tracking verified crafting-loop facts, recipe evidence, ore planning, and unverified recipe claims.",
+  title: "Iron Soul: Dungeon Forge Recipe and Crafting Guide",
+  description:
+    "Iron Soul: Dungeon forge recipe and crafting guide tracking forging, recipe evidence, ore planning, weapon recipe claims, and source boundaries.",
   path: "/forge/",
-  keywords: ["iron soul dungeon forge recipe", "iron soul forge recipe", "iron soul dungeon crafting recipe"]
+  keywords: [
+    "iron soul dungeon forge recipe",
+    "iron soul forge recipe",
+    "iron soul dungeon crafting recipe",
+    "iron soul dungeon forging guide",
+    "recipe iron soul"
+  ]
 });
 
 export default function ForgePage() {
@@ -28,6 +36,11 @@ export default function ForgePage() {
     {
       question: "Does BloxDungeon publish forge recipe costs?",
       answer: "Not yet. Ore counts, crafting recipes, and best-forge tables are held until they can be verified from in-game testing or a traceable source."
+    },
+    {
+      question: "Is this also an Iron Soul crafting guide?",
+      answer:
+        "Yes. The forge page covers crafting, forging, recipe, and weapon-recipe intent, but exact material counts stay unpublished until verified."
     },
     {
       question: "What should I decide before using the forge?",
@@ -42,8 +55,8 @@ export default function ForgePage() {
   return (
     <PageShell
       eyebrow="Forge"
-      title="Iron Soul: Dungeon Forge Recipe Guide"
-      description="The forge is the center of Iron Soul progression. This page separates verified crafting-loop basics from recipe claims still waiting on source-backed data."
+      title="Iron Soul: Dungeon Forge Recipe and Crafting Guide"
+      description="The forge is the center of Iron Soul progression. This page separates verified crafting-loop basics from crafting and recipe claims still waiting on source-backed data."
       path="/forge/"
     >
       <JsonLd data={faq} />
@@ -62,6 +75,14 @@ export default function ForgePage() {
           rare materials and each forge run can change how your character fights.
         </p>
         <StatusTable rows={officialMechanics.filter((item) => ["Forge loop", "Material drops", "Skill tree"].includes(item.label))} />
+
+        <h2>Long-Tail Forge Queries to Cover</h2>
+        <p>
+          GSC still shows forge recipe as the strongest query family, with related crafting recipe, forging
+          guide, and short recipe variants. They belong on this page because the player intent is the same:
+          understand the forge loop before trusting any exact material count.
+        </p>
+        <StatusTable rows={forgeLongTailRows} />
 
         <h2>Forge Data Roadmap</h2>
         <StatusTable rows={forgeResearchRows} />

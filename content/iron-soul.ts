@@ -1,8 +1,8 @@
-export const verificationDate = "2026-07-03";
-export const gscReviewDate = "2026-07-06";
-export const gscCurrentWindow = "2026-06-28 to 2026-07-04";
-export const gscPreviousWindow = "2026-06-21 to 2026-06-27";
-export const gscDeepArticleWindow = "2026-06-07 to 2026-07-04";
+export const verificationDate = "2026-07-07";
+export const gscReviewDate = "2026-07-07";
+export const gscCurrentWindow = "2026-06-29 to 2026-07-05";
+export const gscPreviousWindow = "2026-06-22 to 2026-06-28";
+export const gscDeepArticleWindow = "2026-06-08 to 2026-07-05";
 
 export const officialMechanics = [
   {
@@ -100,7 +100,7 @@ export const codeCheckLog = [
   {
     date: verificationDate,
     source: "Roblox official game API",
-    result: "The game was updated on 2026-07-03. The public description still did not show an official code list."
+    result: "The game was updated on 2026-07-07. The public description still did not show an official code list."
   },
   {
     date: verificationDate,
@@ -239,6 +239,29 @@ export const forgeRecipeTrackerRows = [
   }
 ];
 
+export const forgeLongTailRows = [
+  {
+    label: "Iron Soul Dungeon forge recipe",
+    status: "Top query family",
+    note: "The 28-day GSC window still shows forge recipe as the highest-intent query cluster."
+  },
+  {
+    label: "Iron Soul Dungeon crafting recipe",
+    status: "Long-tail expansion",
+    note: "Crafting recipe and crafting guide variants rank in the same page family and should be answered near the top of the forge page."
+  },
+  {
+    label: "Iron Soul forging guide",
+    status: "CTR opportunity",
+    note: "Forging-guide variants have impressions but need clearer snippet language around gather, forge, and upgrade planning."
+  },
+  {
+    label: "Recipe Iron Soul",
+    status: "Exact-match variant",
+    note: "Short recipe queries should be captured by the same source-first forge explanation, not a separate thin page."
+  }
+];
+
 export const attributeBuildRows = [
   {
     label: "Best attributes for attacker",
@@ -282,6 +305,29 @@ export const attributeOpportunityRows = [
     label: "Formula table",
     status: "Held for evidence",
     note: "Point costs, caps, scaling, and breakpoints need in-game testing before a numeric table is added."
+  }
+];
+
+export const attributeLongTailRows = [
+  {
+    label: "Iron Soul Dungeon best attributes",
+    status: "GSC signal",
+    note: "This remains the main attributes query, but the latest 7-day window has low CTR."
+  },
+  {
+    label: "Iron Soul Dungeon stats",
+    status: "Long-tail variant",
+    note: "Stats and best-stats queries should land on a role-based answer instead of fake formulas."
+  },
+  {
+    label: "Iron Soul attributes",
+    status: "Short query variant",
+    note: "Shorter attribute queries need a clear intro that this page covers attacker, forge master, and survivor directions."
+  },
+  {
+    label: "Best build connection",
+    status: "Internal-link target",
+    note: "Best-build intent should flow from this page to the Builds guide while formulas remain evidence-gated."
   }
 ];
 
@@ -474,6 +520,29 @@ export const raceRecoveryRows = [
   }
 ];
 
+export const raceLongTailRows = [
+  {
+    label: "Iron Soul Dungeon tier list",
+    status: "Broad query",
+    note: "The broad tier-list query had meaningful 28-day impressions but has dropped sharply in the latest 7-day window."
+  },
+  {
+    label: "Iron Soul race tierlist",
+    status: "Spelling variant",
+    note: "Tierlist without a space appears in GSC and should be covered in metadata and page copy."
+  },
+  {
+    label: "Best races Iron Soul Dungeon",
+    status: "CTR opportunity",
+    note: "Best-race and best-races variants have impressions but no clicks; the page should answer the evidence boundary fast."
+  },
+  {
+    label: "Race rerolls",
+    status: "Watchlist",
+    note: "Reroll queries remain low-volume but important because codes, items, and race ranking intent overlap."
+  }
+];
+
 export const rareMaterialWatchlistRows = [
   {
     label: "Dragon Tear",
@@ -494,6 +563,29 @@ export const rareMaterialWatchlistRows = [
     label: "Dungeon drop table",
     status: "Held for evidence",
     note: "Future rows need the dungeon, enemy or boss, reward, source note, sample context, and last checked date."
+  }
+];
+
+export const dungeonLongTailRows = [
+  {
+    label: "Iron Soul Dungeon",
+    status: "Broad-page pressure",
+    note: "The dungeons page still receives broad Iron Soul Dungeon impressions but has very weak CTR in the latest 7-day window."
+  },
+  {
+    label: "Dragon Tear",
+    status: "Material long-tail",
+    note: "Dragon Tear stays a source-needed material query; no drop route or recipe use is published without proof."
+  },
+  {
+    label: "Dragon Horn",
+    status: "Material long-tail",
+    note: "Dragon Horn is tracked as an adjacent rare-material term, not as confirmed loot data."
+  },
+  {
+    label: "Discord server",
+    status: "Official-link watchlist",
+    note: "Discord and Discord-server queries exist, but BloxDungeon should only link an official server after it is verified."
   }
 ];
 

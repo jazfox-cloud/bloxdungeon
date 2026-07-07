@@ -1,20 +1,28 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
-import { attributeBuildRows, attributeOpportunityRows, gscCurrentWindow, gscReviewDate } from "@/content/iron-soul";
+import {
+  attributeBuildRows,
+  attributeLongTailRows,
+  attributeOpportunityRows,
+  gscCurrentWindow,
+  gscReviewDate
+} from "@/content/iron-soul";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Best Attributes and Best Stats Guide",
+  title: "Iron Soul: Dungeon Best Attributes, Stats, and Builds",
   description:
-    "Iron Soul: Dungeon best attributes and best stats guide for attack, forge master, and survivor-style builds with verified-data boundaries.",
+    "Iron Soul: Dungeon best attributes, best stats, and build-direction guide for attack, forge master, and survivor-style builds with verified-data boundaries.",
   path: "/attributes/",
   keywords: [
     "iron soul dungeon attributes",
     "iron soul dungeon best attributes",
     "iron soul dungeon best stats",
+    "iron soul dungeon stats",
     "iron soul attributes",
-    "iron soul stats"
+    "iron soul stats",
+    "iron soul dungeon best build"
   ]
 });
 
@@ -35,8 +43,8 @@ export default function AttributesPage() {
   return (
     <PageShell
       eyebrow="Attributes"
-      title="Iron Soul: Dungeon Best Attributes and Best Stats Guide"
-      description="Plan your best stats around attack, forging, or survival while exact attribute formulas remain under verification."
+      title="Iron Soul: Dungeon Best Attributes, Stats, and Builds"
+      description="Plan your best stats and build direction around attack, forging, or survival while exact attribute formulas remain under verification."
       path="/attributes/"
     >
       <JsonLd data={faq} />
@@ -57,6 +65,13 @@ export default function AttributesPage() {
           visible.
         </p>
         <StatusTable rows={attributeOpportunityRows} />
+
+        <h2>Stats and Build Long-Tail Coverage</h2>
+        <p>
+          The latest GSC pull shows best attributes, stats, and best build variants. This page should answer
+          the stats wording directly, then route broader build decisions to the Builds guide.
+        </p>
+        <StatusTable rows={attributeLongTailRows} />
 
         <h2>Build Directions</h2>
         <p>

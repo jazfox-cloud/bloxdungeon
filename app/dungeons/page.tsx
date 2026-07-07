@@ -3,6 +3,7 @@ import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
 import {
   dungeonRegions,
+  dungeonLongTailRows,
   dungeonOpportunityRows,
   evidenceGaps,
   gscCurrentWindow,
@@ -16,14 +17,16 @@ import { gameSnapshot } from "@/content/site";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Dungeons, Dragon Tear, and Rare Materials",
+  title: "Iron Soul: Dungeon Dungeons, Dragon Tear, Discord, and Rare Materials",
   description:
-    "Iron Soul: Dungeon dungeons guide covering Dragon Tear search demand, rare material watchlist items, verified region types, prep logic, and evidence boundaries.",
+    "Iron Soul: Dungeon dungeons guide covering Dragon Tear, Dragon Horn, Discord watchlist, rare materials, verified region types, prep logic, and evidence boundaries.",
   path: "/dungeons/",
   keywords: [
     "iron soul dungeon dungeons",
     "iron soul dungeon dragon tear",
     "iron soul dungeon dragon horn",
+    "iron soul dungeon discord",
+    "iron soul dungeon discord server",
     "iron soul dungeon rare materials",
     "iron soul dungeon dragon tombs"
   ]
@@ -40,6 +43,11 @@ export default function DungeonsPage() {
       question: "Where do you get Dragon Tear in Iron Soul: Dungeon?",
       answer:
         "BloxDungeon is tracking Dragon Tear as a search-confirmed material query, but no drop source or rate is published until it can be verified from in-game evidence or a traceable source."
+    },
+    {
+      question: "Does BloxDungeon link an Iron Soul: Dungeon Discord server?",
+      answer:
+        "Not until the Discord server can be verified as official or developer-controlled. Discord queries are tracked as a watchlist item."
     },
     {
       question: "Does this page list boss HP or dungeon drop rates?",
@@ -61,8 +69,8 @@ export default function DungeonsPage() {
   return (
     <PageShell
       eyebrow="Dungeons"
-      title="Iron Soul: Dungeon Dungeons, Dragon Tear, and Rare Materials"
-      description="A source-first dungeon hub for Iron Soul: Dungeon, focused on Dragon Tear demand, rare material watchlists, verified region types, and practical prep before deeper boss data is available."
+      title="Iron Soul: Dungeon Dungeons, Dragon Tear, Discord, and Rare Materials"
+      description="A source-first dungeon hub for Iron Soul: Dungeon, focused on Dragon Tear demand, Discord watchlists, rare material terms, verified region types, and practical prep."
       path="/dungeons/"
     >
       <JsonLd data={faq} />
@@ -83,6 +91,14 @@ export default function DungeonsPage() {
           Tear and Dragon Horn belong here as watchlist terms until a source-backed drop route exists.
         </p>
         <StatusTable rows={dungeonOpportunityRows} />
+
+        <h2>Long-Tail Dungeon Watchlist</h2>
+        <p>
+          The latest GSC pull shows broad dungeon impressions but weak clicks, plus material and Discord
+          variants. These terms are useful for headings and FAQs, but exact loot routes and official links
+          stay gated behind verification.
+        </p>
+        <StatusTable rows={dungeonLongTailRows} />
 
         <h2>Verified Dungeon Themes</h2>
         <p>

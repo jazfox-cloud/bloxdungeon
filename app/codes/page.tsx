@@ -24,7 +24,7 @@ export default function CodesPage() {
     },
     {
       question: "How often is this Iron Soul: Dungeon codes page checked?",
-      answer: "This page keeps a visible check log and is refreshed around game updates, traffic spikes, or credible code claims. The latest check shown here is 2026-07-03."
+      answer: "This page keeps a visible check log and is refreshed around game updates, traffic spikes, or credible code claims. The latest check shown here is 2026-07-07."
     },
     {
       question: "Where do Iron Soul: Dungeon code claims usually fail verification?",
@@ -110,6 +110,11 @@ export default function CodesPage() {
           If you are planning progress before a real code appears, follow the path from{" "}
           <a href="/materials/">Materials</a> to <a href="/forge/">Forge</a>, then compare{" "}
           <a href="/skill-tree/">Skill Tree</a> choices before spending rerolls.
+        </p>
+        <p>
+          The latest official game update was checked through the Roblox API on {gameSnapshot.lastChecked}.
+          No official code list was visible in the public description, so codes remain in a no-verified-active
+          state.
         </p>
       </div>
     </PageShell>

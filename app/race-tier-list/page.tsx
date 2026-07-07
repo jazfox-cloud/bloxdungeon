@@ -5,21 +5,25 @@ import {
   gscCurrentWindow,
   gscReviewDate,
   raceEvidenceRows,
+  raceLongTailRows,
   raceRecoveryRows,
   raceTierChecklist
 } from "@/content/iron-soul";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Race Tier List and Best Race Guide",
+  title: "Iron Soul: Dungeon Race Tier List, Tierlist, and Best Race",
   description:
-    "Iron Soul: Dungeon race tier list and best race hub for race rerolls, build context, and verification status before public rankings.",
+    "Iron Soul: Dungeon race tier list, tierlist, best race, and race reroll hub with build context and verification status before public rankings.",
   path: "/race-tier-list/",
   keywords: [
     "iron soul dungeon race tier list",
     "iron soul dungeon tier list",
+    "iron soul dungeon tierlist",
     "iron soul race tier list",
+    "iron soul race tierlist",
     "best race iron soul dungeon",
+    "best races iron soul dungeon",
     "iron soul race rerolls"
   ]
 });
@@ -44,8 +48,8 @@ export default function RaceTierListPage() {
   return (
     <PageShell
       eyebrow="Race Rerolls"
-      title="Iron Soul: Dungeon Race Tier List and Best Race Guide"
-      description="Race reroll and best-race demand are real, but rankings need evidence. This page is prepared for tier data once the race list and build context are verified."
+      title="Iron Soul: Dungeon Race Tier List, Tierlist, and Best Race"
+      description="Race reroll, best-race, and tierlist demand are real, but rankings need evidence. This page is prepared for tier data once race effects and build context are verified."
       path="/race-tier-list/"
     >
       <JsonLd data={faq} />
@@ -67,6 +71,13 @@ export default function RaceTierListPage() {
           of weakening this page.
         </p>
         <StatusTable rows={raceRecoveryRows} />
+
+        <h2>Race Long-Tail Variants</h2>
+        <p>
+          GSC shows spaced and unspaced tier-list variants, plus best race and best races searches. The page
+          now covers those phrasings while keeping actual rankings blocked until race effects are verified.
+        </p>
+        <StatusTable rows={raceLongTailRows} />
 
         <h2>Tier List Requirements</h2>
         <StatusTable rows={raceTierChecklist} />
