@@ -19,6 +19,16 @@ export default function SourcesPage() {
       path="/sources/"
     >
       <div className="content">
+        <p><strong>Verification policy last reviewed:</strong> <time dateTime="2026-07-10">July 10, 2026</time>.</p>
+
+        <h2>How to Read Verification Status</h2>
+        <ul>
+          <li><strong>Official:</strong> identity, dates, descriptions, or counts returned by Roblox-controlled pages or APIs.</li>
+          <li><strong>Community-tested:</strong> repeatable in-game observations with enough context to explain how they were checked.</li>
+          <li><strong>Demand signal:</strong> a search or community topic worth researching, not evidence that a gameplay claim is true.</li>
+          <li><strong>Unverified:</strong> a claim held off public data tables until a traceable source or repeatable test exists.</li>
+        </ul>
+
         <h2>Current Official Snapshot</h2>
         <div className="table-wrap">
           <table>
