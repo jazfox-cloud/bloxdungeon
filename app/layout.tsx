@@ -73,6 +73,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/about/">About</Link>
               <Link href="/sources/">Sources</Link>
               <Link href="/privacy-policy/">Privacy</Link>
+              <Link href="/terms/">Terms</Link>
+              <Link href="/contact/">Contact</Link>
               <a href="https://risingblox.com/">RisingBlox network</a>
             </div>
           </div>

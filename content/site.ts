@@ -78,7 +78,9 @@ export const routes = [
   { path: "/guide/casual-games/", title: "Roblox Casual Games After Iron Soul", priority: 0.65, changeFrequency: "monthly" },
   { path: "/sources/", title: "Sources and Verification Policy", priority: 0.7, changeFrequency: "weekly" },
   { path: "/about/", title: "About BloxDungeon", priority: 0.5, changeFrequency: "monthly" },
-  { path: "/privacy-policy/", title: "Privacy Policy", priority: 0.4, changeFrequency: "yearly" }
+  { path: "/contact/", title: "Contact BloxDungeon", priority: 0.4, changeFrequency: "yearly" },
+  { path: "/privacy-policy/", title: "Privacy Policy", priority: 0.4, changeFrequency: "yearly" },
+  { path: "/terms/", title: "Terms of Use", priority: 0.4, changeFrequency: "yearly" }
 ] as const;
 
 export const pageCards = [
