@@ -17,9 +17,9 @@ import { gameSnapshot } from "@/content/site";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Dungeons, Dragon Tear, Discord, and Rare Materials",
+  title: "Iron Soul: Dungeon Guide, Regions, Drops, and Preparation",
   description:
-    "Iron Soul: Dungeon dungeons guide covering Dragon Tear, Dragon Horn, Discord watchlist, rare materials, verified region types, prep logic, and evidence boundaries.",
+    "Iron Soul: Dungeon guide to verified regions, dungeon preparation, progression decisions, rare material evidence, and future boss and drop tables.",
   path: "/dungeons/",
   keywords: [
     "iron soul dungeon dungeons",
@@ -69,28 +69,28 @@ export default function DungeonsPage() {
   return (
     <PageShell
       eyebrow="Dungeons"
-      title="Iron Soul: Dungeon Dungeons, Dragon Tear, Discord, and Rare Materials"
-      description="A source-first dungeon hub for Iron Soul: Dungeon, focused on Dragon Tear demand, Discord watchlists, rare material terms, verified region types, and practical prep."
+      title="Iron Soul: Dungeon Guide, Regions, Drops, and Preparation"
+      description="Plan dungeon runs around a weapon goal, material target, and build direction, with verified regions and clear evidence boundaries for boss and drop data."
       path="/dungeons/"
     >
       <JsonLd data={faq} />
       <div className="content">
         <div className="notice">
-          <strong>Dungeon interest is rising; exact loot data is still held.</strong>
+          <strong>Dungeon demand cooled this week; the page now prioritizes player preparation.</strong>
           <p>
-            GSC review {gscReviewDate} for {gscCurrentWindow} shows this page getting more impressions
-            than the previous week, but clicks are still weak. We can safely answer dungeon prep and
-            material-watchlist intent, while exact boss names, HP values, route maps, and drop rates need
-            stronger evidence before publication.
+            GSC review {gscReviewDate} for {gscCurrentWindow} versus the prior seven days shows lower
+            overall demand and an average position near page two. This page therefore answers dungeon
+            preparation and progression first. Exact boss names, HP values, route maps, and drop rates still
+            need stronger evidence before publication.
           </p>
         </div>
 
-        <h2>Search Opportunity This Week</h2>
+        <h2>How to Prepare for the Next Dungeon</h2>
         <p>
-          The best near-term growth path is improving how this page answers dungeon-material intent. Dragon
-          Tear and Dragon Horn belong here as watchlist terms until a source-backed drop route exists.
+          Choose the problem you need the next run to solve: weapon power, missing forge materials, or build
+          survivability. Use that answer to set one farming goal instead of following an unverified route.
         </p>
-        <StatusTable rows={dungeonOpportunityRows} />
+        <StatusTable rows={progressionPathRows} />
 
         <h2>Long-Tail Dungeon Watchlist</h2>
         <p>
@@ -132,13 +132,12 @@ export default function DungeonsPage() {
           ]}
         />
 
-        <h2>Recommended Progression Path</h2>
+        <h2>Dungeon Search and Evidence Status</h2>
         <p>
-          Dungeons should set the target for the rest of your planning. If a dungeon is too slow, look at
-          damage and weapons. If it is too punishing, compare survivor choices. If upgrades are blocked,
-          return to materials and forge planning.
+          Search demand helps prioritize research, but it does not verify a drop route or item effect. These
+          are the dungeon topics currently worth tracking as stronger evidence becomes available.
         </p>
-        <StatusTable rows={progressionPathRows} />
+        <StatusTable rows={dungeonOpportunityRows} />
 
         <h2>Dragon Tear and Rare Material Watchlist</h2>
         <p>
@@ -159,7 +158,7 @@ export default function DungeonsPage() {
         <h2>Related Pages</h2>
         <p>
           Dungeon planning connects directly to <a href="/materials/">materials</a>,{" "}
-          <a href="/forge/">forge upgrades</a>, <a href="/skill-tree/">skill tree builds</a>, and{" "}
+          <a href="/forge/">the Forge Recipe and Crafting Guide</a>, <a href="/skill-tree/">skill tree builds</a>, and{" "}
           <a href="/weapons/">weapons</a>.
         </p>
 

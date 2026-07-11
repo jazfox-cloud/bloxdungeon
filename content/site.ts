@@ -23,12 +23,12 @@ export const gameSnapshot = {
   creatorType: "Roblox group with verified badge",
   genre: "RPG / Action RPG",
   created: "2026-03-20",
-  updated: "2026-07-07",
-  visits: "113.5M+",
-  playing: "10.2K+",
-  favorites: "171.2K+",
+  updated: "2026-07-10",
+  visits: "119.4M+",
+  playing: "14.8K+",
+  favorites: "182.7K+",
   maxPlayers: "16",
-  lastChecked: "2026-07-07",
+  lastChecked: "2026-07-10",
   robloxUrl: "https://www.roblox.com/games/117533937949084/Iron-Soul-Dungeon",
   robloxApiUrl: "https://games.roblox.com/v1/games?universeIds=9910245722"
 };
@@ -83,16 +83,16 @@ export const routes = [
 
 export const pageCards = [
   {
+    href: "/forge/",
+    title: "Forge Recipe Guide",
+    description: "Start with the site's strongest verified search topic: forge recipes, crafting, ore collection, and upgrade planning.",
+    tags: ["forge recipe", "crafting", "forging"]
+  },
+  {
     href: "/codes/",
     title: "Codes",
     description: "Verified active-code status, expired-code tracking, and a clear no-fake-codes policy.",
     tags: ["codes", "last checked", "rerolls"]
-  },
-  {
-    href: "/forge/",
-    title: "Forge",
-    description: "Forge recipe, crafting recipe, forging-guide, ore collection, and upgrade-planning evidence.",
-    tags: ["forge recipe", "crafting", "forging"]
   },
   {
     href: "/tools/progression-planner/",

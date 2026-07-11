@@ -1,8 +1,8 @@
-export const verificationDate = "2026-07-07";
-export const gscReviewDate = "2026-07-07";
-export const gscCurrentWindow = "2026-06-29 to 2026-07-05";
-export const gscPreviousWindow = "2026-06-22 to 2026-06-28";
-export const gscDeepArticleWindow = "2026-06-08 to 2026-07-05";
+export const verificationDate = "2026-07-10";
+export const gscReviewDate = "2026-07-10";
+export const gscCurrentWindow = "2026-07-02 to 2026-07-08";
+export const gscPreviousWindow = "2026-06-25 to 2026-07-01";
+export const gscDeepArticleWindow = "2026-06-11 to 2026-07-08";
 
 export const officialMechanics = [
   {
@@ -100,7 +100,7 @@ export const codeCheckLog = [
   {
     date: verificationDate,
     source: "Roblox official game API",
-    result: "The game was updated on 2026-07-07. The public description still did not show an official code list."
+    result: "The game was updated on 2026-07-10. The public description still did not show an official code list."
   },
   {
     date: verificationDate,

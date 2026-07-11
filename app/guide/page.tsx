@@ -37,6 +37,7 @@ export default function GuidePage() {
         <h2>Recommended First Steps</h2>
         <ol>
           <li>Use the <a href="/tools/progression-planner/">Progression Planner</a> if you are not sure whether your next step is dungeon prep, materials, forge, skill tree, or code checking.</li>
+          <li>Use the <a href="/forge/">Forge Recipe and Crafting Guide</a> to connect ore, materials, and weapon upgrades before spending resources.</li>
           <li>Play through early fights long enough to understand enemy pacing and material drops.</li>
           <li>Use forge upgrades deliberately instead of chasing every rumored recipe.</li>
           <li>Track whether your build needs damage, survivability, or utility before spending rerolls.</li>
@@ -46,7 +47,7 @@ export default function GuidePage() {
         <h2>Next Pages</h2>
         <p>
           Start with <a href="/dungeons/">Dungeons</a>, then plan <a href="/materials/">Materials</a>,{" "}
-          <a href="/forge/">Forge</a>, <a href="/skill-tree/">Skill Tree</a>,{" "}
+          <a href="/forge/">Forge Recipe and Crafting Guide</a>, <a href="/skill-tree/">Skill Tree</a>,{" "}
           <a href="/runes/">Runes</a>, <a href="/attributes/">Attributes</a>, and{" "}
           <a href="/weapons/">Weapons</a>.
         </p>

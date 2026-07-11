@@ -64,7 +64,8 @@ export default function BuildsPage() {
         <p>
           A real best build needs more than one table. Compare <a href="/attributes/">Attributes</a>,{" "}
           <a href="/best-runes/">Best Runes</a>, <a href="/weapons/">Weapons</a>,{" "}
-          <a href="/race-tier-list/">Race Tier List</a>, and <a href="/forge/">Forge</a> before copying any
+          <a href="/race-tier-list/">Race Tier List</a>, and the{" "}
+          <a href="/forge/">Forge Recipe and Crafting Guide</a> before copying any
           ranking.
         </p>
       </div>

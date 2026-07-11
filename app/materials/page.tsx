@@ -97,7 +97,8 @@ export default function MaterialsPage() {
 
         <h2>How Materials Connect to Progression</h2>
         <p>
-          Materials sit between <a href="/dungeons/">dungeon runs</a> and <a href="/forge/">forge upgrades</a>.
+          Materials sit between <a href="/dungeons/">dungeon runs</a> and the{" "}
+          <a href="/forge/">Forge Recipe and Crafting Guide</a>.
           If you are not sure what to farm next, choose a build direction on the{" "}
           <a href="/skill-tree/">skill tree page</a>, then work backward to the weapon or upgrade you want.
         </p>
