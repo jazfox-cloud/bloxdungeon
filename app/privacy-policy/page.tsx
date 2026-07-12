@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
+import EmailLink from "@/components/EmailLink";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -39,7 +40,7 @@ export default function PrivacyPolicyPage() {
 
         <h2>Contact</h2>
         <p>
-          For privacy requests or content-source questions, email <a href="mailto:hello@bloxdungeon.com">hello@bloxdungeon.com</a> or visit the contact page.
+          For privacy requests or content-source questions, email <EmailLink /> or visit the contact page.
         </p>
       </div>
     </PageShell>

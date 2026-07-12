@@ -38,6 +38,19 @@ main a:not(.button):not(.card) {
   text-underline-offset: 3px;
 }
 
+.email-link {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--gold-dark);
+  font: inherit;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
 .site-header {
   position: sticky;
   top: 0;
