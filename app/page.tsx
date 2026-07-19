@@ -29,7 +29,7 @@ export default function HomePage() {
               BloxDungeon tracks Iron Soul: Dungeon with a source-first policy: official Roblox data,
               visible community signals, and clearly labeled pending sections when gameplay values are not verified yet.
             </p>
-            <div className="button-row">
+            <div className="button-row" data-ad-exclusion-zone="primary-navigation-actions">
               <Link className="button primary" href="/forge/">Open Forge Recipe Guide</Link>
               <Link className="button" href="/guide/">Start with the Guide</Link>
               <Link className="button" href="/tools/progression-planner/">Open Planner</Link>

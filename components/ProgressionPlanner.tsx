@@ -149,7 +149,7 @@ export default function ProgressionPlanner() {
   const plan = useMemo(() => getPlan(bottleneck, style), [bottleneck, style]);
 
   return (
-    <div className="planner">
+    <div className="planner" data-ad-exclusion-zone="interactive-planner">
       <div className="planner-panel">
         <h2>1. What is blocking your next run?</h2>
         <div className="planner-options">
@@ -192,7 +192,7 @@ export default function ProgressionPlanner() {
             <li key={step}>{step}</li>
           ))}
         </ol>
-        <div className="button-row">
+        <div className="button-row" data-ad-exclusion-zone="planner-results-and-actions">
           <a className="button primary" href={plan.primary}>{plan.primaryLabel}</a>
           {plan.links.map((link) => (
             <a className="button" href={link.href} key={link.href}>{link.label}</a>

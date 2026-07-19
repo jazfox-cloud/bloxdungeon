@@ -3,22 +3,31 @@ import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
 import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Weapons Guide",
-  description: "Iron Soul: Dungeon weapons guide covering weapon search demand, forge links, high-damage questions, and verified-data requirements.",
-  path: "/weapons/",
-  keywords: ["iron soul dungeon weapons", "iron soul dungeon strongest weapon", "iron soul dungeon high damage"]
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Iron Soul: Dungeon Weapons Research Status",
+    description: "Research status for future verified Iron Soul: Dungeon weapon data.",
+    path: "/weapons/"
+  }),
+  robots: { index: false, follow: true }
+};
 
 export default function WeaponsPage() {
   return (
     <PageShell
       eyebrow="Weapons"
-      title="Iron Soul: Dungeon Weapons Guide"
-      description="Weapons are one of the strongest Iron Soul search topics. This page prepares categories and evidence rules before exact damage values are published."
+      title="Iron Soul: Dungeon Weapons Research Status"
+      description="This non-indexed research page records what must be verified before BloxDungeon publishes a weapon guide."
       path="/weapons/"
     >
       <div className="content">
+        <div className="notice warning">
+          <strong>This is not a finished weapon guide.</strong>
+          <p>
+            The page is excluded from search indexing and the sitemap until weapon names, values, and source
+            evidence are available. It remains accessible so existing links do not break.
+          </p>
+        </div>
         <h2>Current Weapon Topics</h2>
         <p>
           YouTube demand includes strongest weapon, staff, light sword, high damage, and new-update weapon reviews.

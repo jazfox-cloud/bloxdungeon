@@ -23,7 +23,7 @@ export default function PageShell({ eyebrow, title, description, path, children 
           {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
           <h1>{title}</h1>
           <p className="lead">{description}</p>
-          <div className="button-row">
+          <div className="button-row" data-ad-exclusion-zone="page-actions">
             <Link className="button primary" href="/sources/">
               View Source Policy
             </Link>

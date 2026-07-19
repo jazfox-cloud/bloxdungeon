@@ -70,8 +70,6 @@ export const routes = [
   { path: "/attributes/", title: "Iron Soul: Dungeon Best Attributes and Best Stats", priority: 0.85, changeFrequency: "weekly" },
   { path: "/builds/", title: "Iron Soul: Dungeon Best Builds Guide", priority: 0.85, changeFrequency: "weekly" },
   { path: "/race-tier-list/", title: "Iron Soul: Dungeon Race Tier List and Best Race", priority: 0.85, changeFrequency: "weekly" },
-  { path: "/weapons/", title: "Iron Soul: Dungeon Weapons Guide", priority: 0.85, changeFrequency: "weekly" },
-  { path: "/relics/", title: "Iron Soul: Dungeon Relics Guide", priority: 0.82, changeFrequency: "weekly" },
   { path: "/level-up-fast/", title: "Iron Soul: Dungeon How to Level Up Fast", priority: 0.82, changeFrequency: "weekly" },
   { path: "/grinding/", title: "Iron Soul: Dungeon XP and Coin Grinding", priority: 0.8, changeFrequency: "weekly" },
   { path: "/updates/", title: "Iron Soul: Dungeon Updates and Patch Review", priority: 0.75, changeFrequency: "daily" },
@@ -80,7 +78,8 @@ export const routes = [
   { path: "/about/", title: "About BloxDungeon", priority: 0.5, changeFrequency: "monthly" },
   { path: "/contact/", title: "Contact BloxDungeon", priority: 0.4, changeFrequency: "yearly" },
   { path: "/privacy-policy/", title: "Privacy Policy", priority: 0.4, changeFrequency: "yearly" },
-  { path: "/terms/", title: "Terms of Use", priority: 0.4, changeFrequency: "yearly" }
+  { path: "/terms/", title: "Terms of Use", priority: 0.4, changeFrequency: "yearly" },
+  { path: "/disclaimer/", title: "Disclaimer", priority: 0.4, changeFrequency: "yearly" }
 ] as const;
 
 export const pageCards = [
@@ -156,16 +155,4 @@ export const pageCards = [
     description: "Progression-bottleneck guide for XP, dungeon pressure, forge timing, and safer grinding.",
     tags: ["leveling", "XP", "progression"]
   },
-  {
-    href: "/relics/",
-    title: "Relics",
-    description: "Relic watchlist and evidence requirements before names, effects, or farming routes go live.",
-    tags: ["relics", "watchlist", "evidence"]
-  },
-  {
-    href: "/weapons/",
-    title: "Weapons",
-    description: "Weapon categories, high-damage search intent, and placeholders for verified weapon data.",
-    tags: ["weapons", "damage", "staff"]
-  }
 ];

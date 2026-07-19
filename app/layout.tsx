@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
+  icons: {
+    icon: "/favicon.svg"
+  },
   alternates: {
     canonical: "/"
   },
@@ -42,9 +45,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <header className="site-header">
+        <header className="site-header" data-ad-exclusion-zone="site-navigation">
           <div className="nav-wrap">
-            <Link href="/" className="brand" aria-label="BloxDungeon home">
+            <Link href="/" className="brand">
               <strong>{siteConfig.name}</strong>
               <span>Iron Soul guides and verified data</span>
             </Link>
@@ -55,14 +58,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/forge/">Forge</Link>
               <Link href="/runes/">Runes</Link>
               <Link href="/race-tier-list/">Race Tier List</Link>
-              <Link href="/weapons/">Weapons</Link>
               <Link href="/sources/">Sources</Link>
               <a href="https://risingblox.com/">RisingBlox</a>
             </nav>
           </div>
         </header>
         {children}
-        <footer className="site-footer">
+        <footer className="site-footer" data-ad-exclusion-zone="legal-and-privacy-controls">
           <div className="container footer-grid">
             <div>
               <strong>{siteConfig.name}</strong>
@@ -73,7 +75,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/about/">About</Link>
               <Link href="/sources/">Sources</Link>
               <Link href="/privacy-policy/">Privacy</Link>
+              <Link href="/privacy-policy/#privacy-choices">Privacy choices</Link>
               <Link href="/terms/">Terms</Link>
+              <Link href="/disclaimer/">Disclaimer</Link>
               <Link href="/contact/">Contact</Link>
               <a href="https://risingblox.com/">RisingBlox network</a>
             </div>

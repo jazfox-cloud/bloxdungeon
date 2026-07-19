@@ -4,13 +4,14 @@ import StatusTable from "@/components/StatusTable";
 import { rareMaterialWatchlistRows, relicResearchRows } from "@/content/iron-soul";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Relics Guide",
-  description:
-    "Iron Soul: Dungeon relics guide and watchlist with evidence requirements before relic names, effects, rarity, or farming routes are published.",
-  path: "/relics/",
-  keywords: ["iron soul dungeon relics", "iron soul relics guide", "iron soul dungeon relic farming"]
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Iron Soul: Dungeon Relics Research Status",
+    description: "Research status for future verified Iron Soul: Dungeon relic data.",
+    path: "/relics/"
+  }),
+  robots: { index: false, follow: true }
+};
 
 export default function RelicsPage() {
   const faq = faqJsonLd([
@@ -29,17 +30,17 @@ export default function RelicsPage() {
   return (
     <PageShell
       eyebrow="Relics"
-      title="Iron Soul: Dungeon Relics Guide"
-      description="A relics watchlist for Iron Soul: Dungeon that explains what evidence is needed before real relic tables go live."
+      title="Iron Soul: Dungeon Relics Research Status"
+      description="This non-indexed research page explains what evidence is still needed before a real relic guide can be published."
       path="/relics/"
     >
       <JsonLd data={faq} />
       <div className="content">
         <div className="notice warning">
-          <strong>Relic details are not verified yet.</strong>
+          <strong>This is not a finished relic guide.</strong>
           <p>
-            This page exists to reserve and organize relic intent, not to invent relic names, effects, drop
-            rates, or farming routes.
+            The page is excluded from search indexing and the sitemap until relic names, effects, rarity, and
+            farming evidence are available. It remains accessible so existing links do not break.
           </p>
         </div>
 

@@ -63,6 +63,15 @@ export default function SourcesPage() {
           <li>Race tier rankings without race effects and build context.</li>
           <li>Hourly XP, coin, or ore rates without repeatable testing.</li>
         </ul>
+
+        <h2>Media, Names, and Rights</h2>
+        <p>
+          BloxDungeon currently does not publish game screenshots, character art, cover images, audio, video,
+          or downloadable game files. Roblox and Iron Soul: Dungeon names are used to identify the game being
+          discussed, not to imply affiliation. Any future third-party media must have a recorded source and a
+          reasonable permission or license basis before publication; an independent-site disclaimer is not a
+          substitute for that evidence.
+        </p>
       </div>
     </PageShell>
   );
