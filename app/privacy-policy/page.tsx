@@ -46,16 +46,16 @@ export default function PrivacyPolicyPage() {
 
         <h2>Cookies and Local Storage</h2>
         <p>
-          The current BloxDungeon application does not set advertising or analytics cookies and does not use
-          localStorage or sessionStorage. Infrastructure providers may use essential security mechanisms. If
-          non-essential storage is introduced, visitors in applicable regions must receive the required choices
-          before that storage is used.
+          BloxDungeon does not use localStorage or sessionStorage for its own application features. Hosting,
+          security, consent, and advertising providers may use cookies or similar technologies as described in
+          this policy. Visitors in applicable regions must receive the required choices before non-essential
+          storage is used.
         </p>
 
         <h2>Advertising and Cookies</h2>
         <p>
-          BloxDungeon does not currently display advertising or load Google AdSense code. If advertising is
-          enabled in the future, third-party vendors, including Google, may use cookies or similar technologies
+          BloxDungeon loads Google AdSense code and may display advertising. Third-party vendors, including
+          Google, may use cookies or similar technologies
           to serve, limit, personalize, and measure ads. Google&apos;s use of advertising cookies can enable it and
           its partners to serve ads based on visits to this site and other sites.
         </p>
@@ -65,17 +65,16 @@ export default function PrivacyPolicyPage() {
           Opting out of personalized advertising does not necessarily remove all advertising.
         </p>
         <p>
-          Before AdSense is enabled, BloxDungeon must activate Google&apos;s consent management platform or another
-          Google-certified CMP for the regions where Google requires it. The message must offer consent, do not
+          BloxDungeon must use Google&apos;s consent management platform or another Google-certified CMP for the
+          regions where Google requires it. The message must offer consent, do not
           consent, and manage-options choices, and must prevent non-essential advertising or analytics storage
           before the applicable choice is obtained.
         </p>
 
         <h2 id="privacy-choices">Privacy Choices</h2>
         <p>
-          No advertising or analytics consent record is currently created by BloxDungeon. Once Google&apos;s CMP is
-          configured, an eligible visitor can use the control below to reopen the official privacy message and
-          change a prior choice. The control appears only when the official Google Privacy &amp; Messaging API is
+          An eligible visitor can use the control below to reopen the official privacy message and change a
+          prior choice when Google&apos;s CMP is active. The control appears only when the official Google Privacy &amp; Messaging API is
           available; BloxDungeon does not substitute a home-made consent banner for a certified CMP.
         </p>
         <PrivacyChoicesLink />

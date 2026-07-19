@@ -61,10 +61,11 @@ test("internal links from sitemap pages resolve to an export or a known noindex 
   }
 });
 
-test("export contains no AdSense code, publisher ID, or hidden ad slot", () => {
+test("export contains the approved AdSense verification and no hidden ad slot", () => {
   const html = sitemapUrls.map((url) => read(routeFile(new URL(url).pathname))).join("\n");
-  assert.doesNotMatch(html, /ca-pub-\d+/i);
-  assert.doesNotMatch(html, /pagead2\.googlesyndication\.com/i);
-  assert.doesNotMatch(html, /adsbygoogle/i);
+  assert.match(html, /<meta name="google-adsense-account" content="ca-pub-2134598094429002"/i);
+  assert.match(html, /pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js\?client=ca-pub-2134598094429002/i);
+  assert.doesNotMatch(html, /ca-pub-(?!2134598094429002)\d+/i);
   assert.doesNotMatch(html, /data-ad-slot=/i);
+  assert.equal(read("out/ads.txt").trim(), "google.com, pub-2134598094429002, DIRECT, f08c47fec0942fa0");
 });

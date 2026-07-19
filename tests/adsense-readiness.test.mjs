@@ -39,21 +39,24 @@ test("legal and privacy surfaces are linked and accurately staged", () => {
   }
 
   const privacy = read("app/privacy-policy/page.tsx");
-  assert.match(privacy, /does not currently display advertising or load Google AdSense code/);
+  assert.match(privacy, /loads Google AdSense code and may display advertising/);
   assert.match(privacy, /does not currently load Google Analytics/);
   assert.match(privacy, /Google-certified CMP/);
   assert.match(privacy, /consent, do not\s+consent, and manage-options choices/);
   assert.match(read("components/PrivacyChoicesLink.tsx"), /showRevocationMessage/);
 });
 
-test("no publisher ID or advertising script was introduced", () => {
+test("AdSense verification, loader, and ads.txt use the approved publisher ID", () => {
   const files = ["app/", "components/", "content/", "lib/", "public/"]
     .flatMap(walk)
     .filter((file) => /\.(?:tsx?|mjs|css|html|svg|txt)$/.test(file));
   const source = files.map((file) => read(file)).join("\n");
-  assert.doesNotMatch(source, /ca-pub-\d+/i);
-  assert.doesNotMatch(source, /pagead2\.googlesyndication\.com/i);
-  assert.doesNotMatch(source, /adsbygoogle/i);
+  const layout = read("app/layout.tsx");
+  assert.match(layout, /google-adsense-account["']:\s*["']ca-pub-2134598094429002/);
+  assert.match(layout, /pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js\?client=ca-pub-2134598094429002/);
+  assert.match(layout, /crossOrigin="anonymous"/);
+  assert.equal(read("public/ads.txt").trim(), "google.com, pub-2134598094429002, DIRECT, f08c47fec0942fa0");
+  assert.doesNotMatch(source, /ca-pub-(?!2134598094429002)\d+/i);
 });
 
 test("interactive and recovery controls are marked as ad-exclusion zones", () => {

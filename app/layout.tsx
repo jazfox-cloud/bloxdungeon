@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
+  other: {
+    "google-adsense-account": "ca-pub-2134598094429002"
+  },
   icons: {
     icon: "/favicon.svg"
   },
@@ -44,6 +47,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2134598094429002"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <header className="site-header" data-ad-exclusion-zone="site-navigation">
           <div className="nav-wrap">
