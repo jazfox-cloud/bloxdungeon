@@ -61,9 +61,9 @@ export default function LevelUpFastPage() {
 
         <h2>What to Check Next</h2>
         <p>
-          Use <a href="/dungeons/">Dungeons</a> to pick the pressure point, <a href="/forge/">Forge</a> to
-          plan upgrades, <a href="/best-runes/">Best Runes</a> for build support, and{" "}
-          <a href="/builds/">Builds</a> to choose a role.
+          Use <a href="/dungeons/">Dungeons</a> to pick the pressure point, <a href="/grinding/">Grinding</a>{" "}
+          to plan an XP or resource goal, <a href="/forge/">Forge</a> to plan upgrades, <a href="/best-runes/">Best Runes</a>{" "}
+          for build support, and <a href="/builds/">Builds</a> to choose a role.
         </p>
       </div>
     </PageShell>

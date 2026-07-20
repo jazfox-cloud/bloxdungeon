@@ -48,7 +48,7 @@ export default function GuidePage() {
         <p>
           Start with <a href="/dungeons/">Dungeons</a>, then plan <a href="/materials/">Materials</a>,{" "}
           <a href="/forge/">Forge Recipe and Crafting Guide</a>, <a href="/skill-tree/">Skill Tree</a>,{" "}
-          <a href="/runes/">Runes</a>, <a href="/attributes/">Attributes</a>, and{" "}
+          <a href="/grinding/">Grinding</a>, <a href="/runes/">Runes</a>, <a href="/attributes/">Attributes</a>, and{" "}
           <a href="/weapons/">Weapons</a>.
         </p>
         <p>
