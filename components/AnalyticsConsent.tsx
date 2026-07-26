@@ -47,11 +47,15 @@ function updateConsent(choice: ConsentChoice) {
 
 export function AnalyticsConsentDefaults() {
   const defaults = `
+    var storedChoice = null;
+    try {
+      storedChoice = window.localStorage.getItem('${consentKey}');
+    } catch (error) {}
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     window.gtag = gtag;
     gtag('consent', 'default', {
-      analytics_storage: 'denied',
+      analytics_storage: storedChoice === 'analytics_granted' ? 'granted' : 'denied',
       ad_storage: 'denied',
       ad_user_data: 'denied',
       ad_personalization: 'denied',
@@ -69,6 +73,20 @@ export function AnalyticsConsentManager() {
   const [isOpen, setIsOpen] = useState(false);
   const pageViewQueued = useRef(false);
 
+  const queuePageView = useCallback(() => {
+    if (pageViewQueued.current || !isProductionHost()) {
+      return;
+    }
+
+    pageViewQueued.current = true;
+    gtag("js", new Date());
+    gtag("config", measurementId, {
+      anonymize_ip: true,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+  }, []);
+
   useEffect(() => {
     ensureGtag();
 
@@ -84,6 +102,9 @@ export function AnalyticsConsentManager() {
     if (storedChoice) {
       setChoice(storedChoice);
       updateConsent(storedChoice);
+      if (storedChoice === "analytics_granted") {
+        queuePageView();
+      }
     } else {
       setIsOpen(true);
     }
@@ -95,21 +116,7 @@ export function AnalyticsConsentManager() {
     return () => {
       delete window.BloxDungeonPrivacyChoices;
     };
-  }, []);
-
-  useEffect(() => {
-    if (pageViewQueued.current || choice !== "analytics_granted" || !isProductionHost()) {
-      return;
-    }
-
-    pageViewQueued.current = true;
-    gtag("js", new Date());
-    gtag("config", measurementId, {
-      anonymize_ip: true,
-      allow_google_signals: false,
-      allow_ad_personalization_signals: false
-    });
-  }, [choice]);
+  }, [queuePageView]);
 
   useEffect(() => {
     const trackContentSelection = (event: MouseEvent) => {
@@ -148,8 +155,11 @@ export function AnalyticsConsentManager() {
 
     setChoice(nextChoice);
     updateConsent(nextChoice);
+    if (nextChoice === "analytics_granted") {
+      queuePageView();
+    }
     setIsOpen(false);
-  }, []);
+  }, [queuePageView]);
 
   const acceptAnalytics = () => saveChoice("analytics_granted");
   const rejectAnalytics = () => saveChoice("denied");

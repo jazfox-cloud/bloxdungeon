@@ -59,7 +59,7 @@ test("GA4 uses the approved measurement ID behind consent and production guards"
   assert.match(analytics, /const measurementId = "G-VXZ1G44LSD"/);
   assert.match(analytics, /productionHosts = new Set\(\["bloxdungeon\.com"\]\)/);
   assert.match(analytics, /googletagmanager\.com\/gtag\/js\?id=/);
-  assert.match(analytics, /analytics_storage:\s*'denied'|analytics_storage:\s*"denied"/);
+  assert.match(analytics, /analytics_storage:\s*storedChoice === 'analytics_granted' \? 'granted' : 'denied'/);
   assert.match(analytics, /ad_storage:\s*'denied'|ad_storage:\s*"denied"/);
   assert.match(analytics, /ad_user_data:\s*'denied'|ad_user_data:\s*"denied"/);
   assert.match(analytics, /ad_personalization:\s*'denied'|ad_personalization:\s*"denied"/);
