@@ -28,9 +28,9 @@ function ensureGtag() {
   window.gtag = gtag;
 }
 
-function gtag(...args: unknown[]) {
+function gtag(..._args: unknown[]) {
   window.dataLayer = window.dataLayer ?? [];
-  window.dataLayer.push(args);
+  window.dataLayer.push(arguments);
 }
 
 function updateConsent(choice: ConsentChoice) {
