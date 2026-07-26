@@ -43,6 +43,7 @@ export function AnalyticsConsentDefaults() {
   const defaults = `
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
     gtag('consent', 'default', {
       analytics_storage: 'denied',
       ad_storage: 'denied',
@@ -94,8 +95,8 @@ export function AnalyticsConsentManager() {
     }
 
     pageViewQueued.current = true;
-    window.gtag?.("js", new Date());
-    window.gtag?.("config", measurementId, {
+    gtag("js", new Date());
+    gtag("config", measurementId, {
       anonymize_ip: true,
       allow_google_signals: false,
       allow_ad_personalization_signals: false
@@ -119,7 +120,7 @@ export function AnalyticsConsentManager() {
         return;
       }
 
-      window.gtag?.("event", "select_content", {
+      gtag("event", "select_content", {
         content_type: contentType,
         item_id: itemId,
         transport_type: "beacon"
