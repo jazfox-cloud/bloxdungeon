@@ -23,6 +23,11 @@ function isProductionHost() {
   return typeof window !== "undefined" && productionHosts.has(window.location.hostname);
 }
 
+function ensureGtag() {
+  window.dataLayer = window.dataLayer ?? [];
+  window.gtag = gtag;
+}
+
 function gtag(...args: unknown[]) {
   window.dataLayer = window.dataLayer ?? [];
   window.dataLayer.push(args);
@@ -31,6 +36,7 @@ function gtag(...args: unknown[]) {
 function updateConsent(choice: ConsentChoice) {
   const analyticsGranted = choice === "analytics_granted";
 
+  ensureGtag();
   gtag("consent", "update", {
     analytics_storage: analyticsGranted ? "granted" : "denied",
     ad_storage: "denied",
@@ -64,6 +70,8 @@ export function AnalyticsConsentManager() {
   const pageViewQueued = useRef(false);
 
   useEffect(() => {
+    ensureGtag();
+
     let storedChoice: ConsentChoice | null = null;
 
     try {
