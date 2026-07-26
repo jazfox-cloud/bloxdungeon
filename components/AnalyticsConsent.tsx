@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const measurementId = "G-VXZ1G44LSD";
 const consentKey = "bloxdungeon_consent_v1";
@@ -60,7 +60,7 @@ export function AnalyticsConsentDefaults() {
 export function AnalyticsConsentManager() {
   const [choice, setChoice] = useState<ConsentChoice | null>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [gtagReady, setGtagReady] = useState(false);
+  const pageViewQueued = useRef(false);
 
   useEffect(() => {
     let storedChoice: ConsentChoice | null = null;
@@ -89,17 +89,18 @@ export function AnalyticsConsentManager() {
   }, []);
 
   useEffect(() => {
-    if (!gtagReady || choice !== "analytics_granted" || !isProductionHost()) {
+    if (pageViewQueued.current || choice !== "analytics_granted" || !isProductionHost()) {
       return;
     }
 
+    pageViewQueued.current = true;
     window.gtag?.("js", new Date());
     window.gtag?.("config", measurementId, {
       anonymize_ip: true,
       allow_google_signals: false,
       allow_ad_personalization_signals: false
     });
-  }, [choice, gtagReady]);
+  }, [choice]);
 
   useEffect(() => {
     const trackContentSelection = (event: MouseEvent) => {
@@ -120,7 +121,8 @@ export function AnalyticsConsentManager() {
 
       window.gtag?.("event", "select_content", {
         content_type: contentType,
-        item_id: itemId
+        item_id: itemId,
+        transport_type: "beacon"
       });
     };
 
@@ -150,7 +152,6 @@ export function AnalyticsConsentManager() {
           id="bd-ga4-loader"
           src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
           strategy="afterInteractive"
-          onReady={() => setGtagReady(true)}
         />
       ) : null}
       {isOpen ? (
