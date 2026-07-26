@@ -2,6 +2,10 @@ import Link from "next/link";
 import { gameSnapshot, pageCards, sourceNotes } from "@/content/site";
 import { JsonLd } from "@/lib/seo";
 
+function contentSlug(href: string) {
+  return href.replace(/^\/|\/$/g, "").replaceAll("/", "_") || "home";
+}
+
 export default function HomePage() {
   const gameJsonLd = {
     "@context": "https://schema.org",
@@ -65,7 +69,13 @@ export default function HomePage() {
           </div>
           <div className="grid">
             {pageCards.map((card) => (
-              <Link className="card" href={card.href} key={card.href}>
+              <Link
+                className="card"
+                data-analytics-content="content_card"
+                data-analytics-slug={contentSlug(card.href)}
+                href={card.href}
+                key={card.href}
+              >
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>
                 <div className="tag-row">

@@ -52,6 +52,12 @@ main a:not(.button):not(.card) {
   cursor: pointer;
 }
 
+.privacy-choice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
 .privacy-choice-button:focus-visible,
 .email-link:focus-visible {
   outline: 3px solid var(--blue);
@@ -444,6 +450,42 @@ tr:last-child td {
   gap: 12px;
 }
 
+.consent-banner {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  width: min(720px, calc(100vw - 32px));
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 18px 60px rgba(24, 22, 20, 0.18);
+}
+
+.consent-banner h2 {
+  margin: 0 0 6px;
+  font-size: 19px;
+  letter-spacing: 0;
+}
+
+.consent-banner p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.consent-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 @media (max-width: 820px) {
   .nav-wrap {
     align-items: flex-start;
@@ -465,5 +507,14 @@ tr:last-child td {
 
   h1 {
     font-size: 42px;
+  }
+
+  .consent-banner {
+    left: 16px;
+    grid-template-columns: 1fr;
+  }
+
+  .consent-actions {
+    justify-content: flex-start;
   }
 }

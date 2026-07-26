@@ -10,6 +10,9 @@ type GoogleFundingChoices = {
 declare global {
   interface Window {
     googlefc?: GoogleFundingChoices;
+    BloxDungeonPrivacyChoices?: {
+      open: () => void;
+    };
   }
 }
 
@@ -26,18 +29,26 @@ export default function PrivacyChoicesLink() {
     });
   }, []);
 
-  if (!available) {
-    return null;
-  }
-
   return (
-    <button
-      className="privacy-choice-button"
-      data-ad-exclusion-zone="privacy-choice-control"
-      onClick={() => window.googlefc?.showRevocationMessage?.()}
-      type="button"
-    >
-      Privacy and cookie settings
-    </button>
+    <div className="privacy-choice-actions">
+      <button
+        className="privacy-choice-button"
+        data-ad-exclusion-zone="privacy-choice-control"
+        onClick={() => window.BloxDungeonPrivacyChoices?.open()}
+        type="button"
+      >
+        Analytics cookie settings
+      </button>
+      {available ? (
+        <button
+          className="privacy-choice-button"
+          data-ad-exclusion-zone="privacy-choice-control"
+          onClick={() => window.googlefc?.showRevocationMessage?.()}
+          type="button"
+        >
+          Google ad privacy settings
+        </button>
+      ) : null}
+    </div>
   );
 }

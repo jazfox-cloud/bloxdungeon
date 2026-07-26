@@ -40,10 +40,33 @@ test("legal and privacy surfaces are linked and accurately staged", () => {
 
   const privacy = read("app/privacy-policy/page.tsx");
   assert.match(privacy, /loads Google AdSense code and may display advertising/);
-  assert.match(privacy, /does not currently load Google Analytics/);
+  assert.match(privacy, /uses Google Analytics 4/);
+  assert.match(privacy, /only after a visitor accepts analytics cookies/);
   assert.match(privacy, /Google-certified CMP/);
+  assert.match(privacy, /AdSense certified CMP still needs to be configured/);
   assert.match(privacy, /consent, do not\s+consent, and manage-options choices/);
   assert.match(read("components/PrivacyChoicesLink.tsx"), /showRevocationMessage/);
+});
+
+test("GA4 uses the approved measurement ID behind consent and production guards", () => {
+  const analytics = read("components/AnalyticsConsent.tsx");
+  const allSource = ["app/", "components/", "content/", "lib/", "public/"]
+    .flatMap(walk)
+    .filter((file) => /\.(?:tsx?|mjs|css|html|svg|txt)$/.test(file))
+    .map((file) => read(file))
+    .join("\n");
+
+  assert.match(analytics, /const measurementId = "G-VXZ1G44LSD"/);
+  assert.match(analytics, /productionHosts = new Set\(\["bloxdungeon\.com"\]\)/);
+  assert.match(analytics, /googletagmanager\.com\/gtag\/js\?id=/);
+  assert.match(analytics, /analytics_storage:\s*'denied'|analytics_storage:\s*"denied"/);
+  assert.match(analytics, /ad_storage:\s*'denied'|ad_storage:\s*"denied"/);
+  assert.match(analytics, /ad_user_data:\s*'denied'|ad_user_data:\s*"denied"/);
+  assert.match(analytics, /ad_personalization:\s*'denied'|ad_personalization:\s*"denied"/);
+  assert.match(analytics, /allow_google_signals:\s*false/);
+  assert.match(analytics, /allow_ad_personalization_signals:\s*false/);
+  assert.match(analytics, /select_content/);
+  assert.deepEqual([...allSource.matchAll(/G-[A-Z0-9]+/g)].map((match) => match[0]), ["G-VXZ1G44LSD"]);
 });
 
 test("AdSense verification, loader, and ads.txt use the approved publisher ID", () => {

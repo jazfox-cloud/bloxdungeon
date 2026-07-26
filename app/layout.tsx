@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import { AnalyticsConsentDefaults, AnalyticsConsentManager } from "@/components/AnalyticsConsent";
 import { siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <AnalyticsConsentDefaults />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2134598094429002"
@@ -55,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <AnalyticsConsentManager />
         <header className="site-header" data-ad-exclusion-zone="site-navigation">
           <div className="nav-wrap">
             <Link href="/" className="brand">
