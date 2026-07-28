@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "BloxDungeon",
   domain: "https://bloxdungeon.com",
-  title: "BloxDungeon - Iron Soul: Dungeon Guide, Codes, Forge, Runes, and Weapons",
+  title: "BloxDungeon - Iron Soul: Dungeon Guide, Codes, Forge, Materials, and Planner",
   description:
     "Independent Iron Soul: Dungeon guide for Roblox players, covering verified codes status, forge basics, runes, attributes, race rerolls, weapons, and grinding routes.",
   keywords: [
@@ -47,7 +47,7 @@ export const sourceNotes = [
   {
     name: "LudusDex Roblox trend report",
     url: "https://ludusdex.com/data/reports/2026-06-19/roblox-trend-morning-report.md",
-    use: "Trend radar and SEO-window signal, not a source for in-game item values."
+    use: "Trend radar for topic discovery, not a source for in-game item values."
   },
   {
     name: "YouTube search results",
@@ -65,15 +65,15 @@ export const routes = [
   { path: "/dungeons/", title: "Iron Soul: Dungeon Dungeons, Dragon Tear, and Rare Materials", priority: 0.88, changeFrequency: "weekly" },
   { path: "/skill-tree/", title: "Iron Soul: Dungeon Skill Tree and Builds", priority: 0.88, changeFrequency: "weekly" },
   { path: "/materials/", title: "Iron Soul: Dungeon Materials and Crystalized Ore", priority: 0.86, changeFrequency: "weekly" },
-  { path: "/runes/", title: "Iron Soul: Dungeon Runes Guide", priority: 0.85, changeFrequency: "weekly" },
-  { path: "/best-runes/", title: "Iron Soul: Dungeon Best Runes Guide", priority: 0.85, changeFrequency: "weekly" },
-  { path: "/attributes/", title: "Iron Soul: Dungeon Best Attributes and Best Stats", priority: 0.85, changeFrequency: "weekly" },
-  { path: "/builds/", title: "Iron Soul: Dungeon Best Builds Guide", priority: 0.85, changeFrequency: "weekly" },
-  { path: "/race-tier-list/", title: "Iron Soul: Dungeon Race Tier List and Best Race", priority: 0.85, changeFrequency: "weekly" },
+  { path: "/runes/", title: "Iron Soul: Dungeon Runes Guide", priority: 0.85, changeFrequency: "weekly", indexed: false },
+  { path: "/best-runes/", title: "Iron Soul: Dungeon Best Runes Research Status", priority: 0.85, changeFrequency: "weekly", indexed: false },
+  { path: "/attributes/", title: "Iron Soul: Dungeon Best Attributes and Best Stats", priority: 0.85, changeFrequency: "weekly", indexed: false },
+  { path: "/builds/", title: "Iron Soul: Dungeon Builds Research Status", priority: 0.85, changeFrequency: "weekly", indexed: false },
+  { path: "/race-tier-list/", title: "Iron Soul: Dungeon Race Tier List Research Status", priority: 0.85, changeFrequency: "weekly", indexed: false },
   { path: "/level-up-fast/", title: "Iron Soul: Dungeon How to Level Up Fast", priority: 0.82, changeFrequency: "weekly" },
-  { path: "/grinding/", title: "Iron Soul: Dungeon XP and Coin Grinding", priority: 0.8, changeFrequency: "weekly" },
-  { path: "/updates/", title: "Iron Soul: Dungeon Updates and Patch Review", priority: 0.75, changeFrequency: "daily" },
-  { path: "/guide/casual-games/", title: "Roblox Casual Games After Iron Soul", priority: 0.65, changeFrequency: "monthly" },
+  { path: "/grinding/", title: "Iron Soul: Dungeon XP and Coin Grinding", priority: 0.8, changeFrequency: "weekly", indexed: false },
+  { path: "/updates/", title: "Iron Soul: Dungeon Updates and Patch Review", priority: 0.75, changeFrequency: "daily", indexed: false },
+  { path: "/guide/casual-games/", title: "Roblox Casual Games After Iron Soul", priority: 0.65, changeFrequency: "monthly", indexed: false },
   { path: "/sources/", title: "Sources and Verification Policy", priority: 0.7, changeFrequency: "weekly" },
   { path: "/about/", title: "About BloxDungeon", priority: 0.5, changeFrequency: "monthly" },
   { path: "/contact/", title: "Contact BloxDungeon", priority: 0.4, changeFrequency: "yearly" },
@@ -86,7 +86,7 @@ export const pageCards = [
   {
     href: "/forge/",
     title: "Forge Recipe Guide",
-    description: "Start with the site's strongest verified search topic: forge recipes, crafting, ore collection, and upgrade planning.",
+    description: "Verified forge-loop basics, ore collection context, crafting boundaries, and upgrade planning without unsourced recipe costs.",
     tags: ["forge recipe", "crafting", "forging"]
   },
   {
@@ -94,6 +94,12 @@ export const pageCards = [
     title: "Codes",
     description: "Verified active-code status, expired-code tracking, and a clear no-fake-codes policy.",
     tags: ["codes", "last checked", "rerolls"]
+  },
+  {
+    href: "/guide/",
+    title: "Beginner Guide",
+    description: "A practical starting path for dungeons, materials, forge choices, skill-tree direction, and safer progression decisions.",
+    tags: ["start here", "progression", "guide"]
   },
   {
     href: "/tools/progression-planner/",
@@ -118,36 +124,6 @@ export const pageCards = [
     title: "Materials",
     description: "Crystalized ore, rare materials, and the source-first checklist for future drop tables.",
     tags: ["materials", "ore", "drops"]
-  },
-  {
-    href: "/runes/",
-    title: "Runes",
-    description: "Rune notes and build-planning framework. Exact effects are added only when verified.",
-    tags: ["runes", "builds", "testing"]
-  },
-  {
-    href: "/best-runes/",
-    title: "Best Runes",
-    description: "Build-based best-rune guide for attacker, forge master, and survivor planning.",
-    tags: ["best runes", "GSC signal", "builds"]
-  },
-  {
-    href: "/attributes/",
-    title: "Attributes",
-    description: "Best attributes and best stats guidance for attacker, forge master, and survivor builds.",
-    tags: ["attributes", "best stats", "builds"]
-  },
-  {
-    href: "/builds/",
-    title: "Builds",
-    description: "Best-build framework connecting attributes, runes, weapons, race, and forge choices.",
-    tags: ["best build", "attributes", "runes"]
-  },
-  {
-    href: "/race-tier-list/",
-    title: "Race Tier List",
-    description: "Best-race and race-tier-list hub with reroll evidence rules before public rankings.",
-    tags: ["best race", "tier list", "rerolls"]
   },
   {
     href: "/level-up-fast/",

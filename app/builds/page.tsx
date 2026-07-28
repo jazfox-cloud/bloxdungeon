@@ -4,18 +4,21 @@ import StatusTable from "@/components/StatusTable";
 import { attributeBuildRows, buildGuideRows, gscDeepArticleWindow, gscReviewDate } from "@/content/iron-soul";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Best Builds Guide",
-  description:
-    "Iron Soul: Dungeon best builds guide for attacker, forge master, and survivor planning with source boundaries around stats, runes, weapons, and races.",
-  path: "/builds/",
-  keywords: [
-    "iron soul dungeon best build",
-    "iron soul dungeon builds",
-    "iron soul dungeon best stats",
-    "iron soul dungeon best attributes"
-  ]
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Iron Soul: Dungeon Builds Research Status",
+    description:
+      "Non-indexed research status for future Iron Soul: Dungeon builds, stats, runes, weapons, and race evidence.",
+    path: "/builds/",
+    keywords: [
+      "iron soul dungeon best build",
+      "iron soul dungeon builds",
+      "iron soul dungeon best stats",
+      "iron soul dungeon best attributes"
+    ]
+  }),
+  robots: { index: false, follow: true }
+};
 
 export default function BuildsPage() {
   const faq = faqJsonLd([
@@ -34,8 +37,8 @@ export default function BuildsPage() {
   return (
     <PageShell
       eyebrow="Builds"
-      title="Iron Soul: Dungeon Best Builds Guide"
-      description="A source-first best-build guide for Iron Soul: Dungeon that groups choices by attacker, forge master, and survivor goals."
+      title="Iron Soul: Dungeon Builds Research Status"
+      description="This non-indexed research page keeps build-direction notes while exact best-build claims wait for source-backed evidence."
       path="/builds/"
     >
       <JsonLd data={faq} />
@@ -43,9 +46,8 @@ export default function BuildsPage() {
         <div className="notice">
           <strong>Build demand is real; best-in-slot claims need proof.</strong>
           <p>
-            GSC review {gscReviewDate} for {gscDeepArticleWindow} shows best-build, best-attributes,
-            best-stats, and tier-list intent. This page connects those searches without pretending exact
-            formulas are known.
+            Best-build, best-attribute, and tier-list questions are real. This page stays out of search
+            while it connects those questions without pretending exact formulas are known.
           </p>
         </div>
 

@@ -4,18 +4,21 @@ import StatusTable from "@/components/StatusTable";
 import { bestRunesRows, gscDeepArticleWindow, gscReviewDate, runeResearchRows } from "@/content/iron-soul";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Best Runes Guide",
-  description:
-    "Iron Soul: Dungeon best runes guide with build-based rune planning, GSC-backed demand notes, and source requirements before exact rune rankings.",
-  path: "/best-runes/",
-  keywords: [
-    "iron soul dungeon best runes",
-    "iron soul dungeon runes",
-    "what is the best rune in iron soul dungeon",
-    "iron soul runes guide"
-  ]
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Iron Soul: Dungeon Best Runes Research Status",
+    description:
+      "Non-indexed research status for future Iron Soul: Dungeon best-rune rankings, source requirements, and build context.",
+    path: "/best-runes/",
+    keywords: [
+      "iron soul dungeon best runes",
+      "iron soul dungeon runes",
+      "what is the best rune in iron soul dungeon",
+      "iron soul runes guide"
+    ]
+  }),
+  robots: { index: false, follow: true }
+};
 
 export default function BestRunesPage() {
   const faq = faqJsonLd([
@@ -34,8 +37,8 @@ export default function BestRunesPage() {
   return (
     <PageShell
       eyebrow="Best Runes"
-      title="Iron Soul: Dungeon Best Runes Guide"
-      description="A build-based rune guide for Iron Soul: Dungeon that answers best-rune intent without inventing rune effects."
+      title="Iron Soul: Dungeon Best Runes Research Status"
+      description="This non-indexed research page records how rune rankings will be verified before a public best-runes guide is published."
       path="/best-runes/"
     >
       <JsonLd data={faq} />
@@ -43,9 +46,8 @@ export default function BestRunesPage() {
         <div className="notice">
           <strong>Best-rune demand exists; exact effects still need proof.</strong>
           <p>
-            GSC review {gscReviewDate} for {gscDeepArticleWindow} shows rune searches, including a
-            best-rune variant. This page collects the intent while keeping exact rune rankings unpublished
-            until the source trail is strong enough.
+            Player demand exists, including best-rune questions. This page keeps exact rune rankings
+            unpublished until the source trail is strong enough.
           </p>
         </div>
 

@@ -28,10 +28,10 @@ export default function HomePage() {
         <div className="container hero-grid">
           <div>
             <p className="eyebrow">Independent Roblox RPG Guide</p>
-            <h1>Iron Soul: Dungeon guide, codes, forge, runes, and weapons.</h1>
+            <h1>Iron Soul: Dungeon guide, codes, forge, materials, and planner.</h1>
             <p className="lead">
-              BloxDungeon tracks Iron Soul: Dungeon with a source-first policy: official Roblox data,
-              visible community signals, and clearly labeled pending sections when gameplay values are not verified yet.
+              BloxDungeon is a focused Iron Soul: Dungeon guide for verified codes status, forge planning,
+              material decisions, skill-tree direction, and a simple progression planner.
             </p>
             <div className="button-row" data-ad-exclusion-zone="primary-navigation-actions">
               <Link className="button primary" href="/forge/">Open Forge Recipe Guide</Link>
@@ -63,8 +63,8 @@ export default function HomePage() {
           <div className="section-header">
             <h2>Core Guides</h2>
             <p className="muted">
-              These pages match current search demand around forge, runes, attributes, race rerolls,
-              weapons, grinding, and codes.
+              These are the pages with enough current value to feature: player actions, source-backed
+              boundaries, and tools that work today.
             </p>
           </div>
           <div className="grid">

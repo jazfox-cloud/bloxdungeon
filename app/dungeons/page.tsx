@@ -78,10 +78,8 @@ export default function DungeonsPage() {
         <div className="notice">
           <strong>Dungeon demand cooled this week; the page now prioritizes player preparation.</strong>
           <p>
-            GSC review {gscReviewDate} for {gscCurrentWindow} versus the prior seven days shows lower
-            overall demand and an average position near page two. This page therefore answers dungeon
-            preparation and progression first. Exact boss names, HP values, route maps, and drop rates still
-            need stronger evidence before publication.
+            This page answers dungeon preparation and progression first. Exact boss names, HP values,
+            route maps, and drop rates still need stronger evidence before publication.
           </p>
         </div>
 
@@ -92,10 +90,9 @@ export default function DungeonsPage() {
         </p>
         <StatusTable rows={progressionPathRows} />
 
-        <h2>Long-Tail Dungeon Watchlist</h2>
+        <h2>Dungeon Evidence Watchlist</h2>
         <p>
-          The latest GSC pull shows broad dungeon impressions but weak clicks, plus material and Discord
-          variants. These terms are useful for headings and FAQs, but exact loot routes and official links
+          Broad dungeon, material, and Discord questions are useful for headings and FAQs, but exact loot routes and official links
           stay gated behind verification.
         </p>
         <StatusTable rows={dungeonLongTailRows} />
@@ -141,13 +138,13 @@ export default function DungeonsPage() {
 
         <h2>Dragon Tear and Rare Material Watchlist</h2>
         <p>
-          Search Console is starting to surface rare-material queries such as Dragon Tear. Those terms are
-          useful signals, but they are not enough to publish a drop source, drop rate, or recipe use without
+          Player questions include rare-material terms such as Dragon Tear. Those terms are useful signals,
+          but they are not enough to publish a drop source, drop rate, or recipe use without
           in-game evidence.
         </p>
         <StatusTable rows={rareMaterialWatchlistRows} />
 
-        <h2>What We Will Add Later</h2>
+        <h2>Dungeon Data Held Back</h2>
         <p>
           The next useful dungeon upgrade is a source-backed boss and route table. Each row should include
           the dungeon name, encounter type, material rewards, source note, and last checked date. Until then,

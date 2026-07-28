@@ -4,12 +4,15 @@ import StatusTable from "@/components/StatusTable";
 import { officialMechanics, runeResearchRows } from "@/content/iron-soul";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Runes Guide",
-  description: "Iron Soul: Dungeon runes guide with build-planning notes and a source-first policy for rune effects and values.",
-  path: "/runes/",
-  keywords: ["iron soul dungeon runes", "iron soul runes guide", "iron soul dungeon best runes"]
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Iron Soul: Dungeon Runes Research Status",
+    description: "Non-indexed research status for future verified Iron Soul: Dungeon rune names, effects, and build fit.",
+    path: "/runes/",
+    keywords: ["iron soul dungeon runes", "iron soul runes guide", "iron soul dungeon best runes"]
+  }),
+  robots: { index: false, follow: true }
+};
 
 export default function RunesPage() {
   const faq = faqJsonLd([
@@ -26,8 +29,8 @@ export default function RunesPage() {
   return (
     <PageShell
       eyebrow="Runes"
-      title="Iron Soul: Dungeon Runes Guide"
-      description="Runes are a major player-search topic. This first version explains how we will organize rune evidence before publishing exact effects."
+      title="Iron Soul: Dungeon Runes Research Status"
+      description="This non-indexed research page records the evidence needed before BloxDungeon publishes a complete rune guide."
       path="/runes/"
     >
       <JsonLd data={faq} />
@@ -39,7 +42,7 @@ export default function RunesPage() {
           </p>
         </div>
 
-        <h2>Rune Coverage Plan</h2>
+        <h2>Rune Evidence Structure</h2>
         <p>
           The official Roblox page confirms that Iron Soul has a skill tree with attacker, forge master,
           and survivor-style paths. Rune coverage should map into those build paths instead of ranking
@@ -60,7 +63,7 @@ export default function RunesPage() {
           It explains how rune value changes across attacker, forge master, survivor, and dungeon-clear goals.
         </p>
 
-        <h2>Planned Rune Table Format</h2>
+        <h2>Verification Format</h2>
         <p>
           The first verified rune table should include the rune name, exact effect text, best build context,
           source type, and last checked date. That format will let players compare runes without hiding the

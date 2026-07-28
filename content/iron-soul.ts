@@ -220,7 +220,7 @@ export const forgeRecipeTrackerRows = [
   {
     label: "Iron Soul Dungeon forge recipe",
     status: "Search-confirmed demand",
-    note: "Search Console shows players looking for forge recipes, so this page tracks recipe evidence without publishing unsourced costs."
+    note: "Players look for forge recipes, so this page tracks recipe evidence without publishing unsourced costs."
   },
   {
     label: "Crafting recipe table",
@@ -243,7 +243,7 @@ export const forgeLongTailRows = [
   {
     label: "Iron Soul Dungeon forge recipe",
     status: "Top query family",
-    note: "The 28-day GSC window still shows forge recipe as the highest-intent query cluster."
+    note: "Forge recipe remains the clearest high-intent player question."
   },
   {
     label: "Iron Soul Dungeon crafting recipe",
@@ -289,7 +289,7 @@ export const attributeOpportunityRows = [
   {
     label: "Best attributes",
     status: "Existing demand",
-    note: "GSC still shows impressions for best attributes and best stats, but exact formulas remain unverified."
+    note: "Players ask for best attributes and best stats, but exact formulas remain unverified."
   },
   {
     label: "Build direction answer",
@@ -311,7 +311,7 @@ export const attributeOpportunityRows = [
 export const attributeLongTailRows = [
   {
     label: "Iron Soul Dungeon best attributes",
-    status: "GSC signal",
+    status: "Reader demand",
     note: "This remains the main attributes query, but the latest 7-day window has low CTR."
   },
   {
@@ -357,8 +357,8 @@ export const runeResearchRows = [
 export const bestRunesRows = [
   {
     label: "Iron Soul Dungeon runes",
-    status: "GSC signal",
-    note: "The 28-day GSC window shows rune queries, including a best-rune variant, but exact rune effects are not verified yet."
+    status: "Reader demand",
+    note: "Rune questions include a best-rune variant, but exact rune effects are not verified yet."
   },
   {
     label: "Best rune answer",
@@ -404,7 +404,7 @@ export const relicResearchRows = [
   {
     label: "Relics",
     status: "Watchlist",
-    note: "Relic demand is a planned deep-article target, but GSC has not shown a relic query cluster yet."
+    note: "Relic demand is a future deep-article target, but BloxDungeon has not verified a relic query cluster yet."
   },
   {
     label: "Official confirmation",
@@ -426,8 +426,8 @@ export const relicResearchRows = [
 export const buildGuideRows = [
   {
     label: "Best build",
-    status: "GSC signal",
-    note: "The 28-day GSC window includes best-build, best-attributes, best-stats, and tier-list intent."
+    status: "Reader demand",
+    note: "Player questions include best-build, best-attributes, best-stats, and tier-list intent."
   },
   {
     label: "Attacker build",
@@ -478,7 +478,7 @@ export const raceEvidenceRows = [
   {
     label: "Best race in Iron Soul Dungeon",
     status: "Demand confirmed",
-    note: "Search Console shows best-race and race-tier-list queries, but ranking is paused until race names and effects are verified."
+    note: "Players ask for best-race and race-tier-list answers, but ranking is paused until race names and effects are verified."
   },
   {
     label: "Race reroll method",
@@ -501,7 +501,7 @@ export const raceRecoveryRows = [
   {
     label: "Iron Soul Dungeon tier list",
     status: "Lost impressions",
-    note: "GSC showed the broad tier-list query dropping out of the latest window, so the page now clarifies race, weapon, and build boundaries."
+    note: "Broad tier-list demand is ambiguous, so the page clarifies race, weapon, and build boundaries."
   },
   {
     label: "Race tier list intent",
@@ -529,7 +529,7 @@ export const raceLongTailRows = [
   {
     label: "Iron Soul race tierlist",
     status: "Spelling variant",
-    note: "Tierlist without a space appears in GSC and should be covered in metadata and page copy."
+    note: "Tierlist without a space should be covered in metadata and page copy only after rankings are verifiable."
   },
   {
     label: "Best races Iron Soul Dungeon",
@@ -547,7 +547,7 @@ export const rareMaterialWatchlistRows = [
   {
     label: "Dragon Tear",
     status: "Search signal only",
-    note: "Search Console shows player interest, but BloxDungeon has not verified the item source, drop route, or exact use yet."
+    note: "Players show interest, but BloxDungeon has not verified the item source, drop route, or exact use yet."
   },
   {
     label: "Dragon Horn",
@@ -593,7 +593,7 @@ export const dungeonOpportunityRows = [
   {
     label: "Dungeons page",
     status: "Growth opportunity",
-    note: "In GSC, this page gained impressions in the latest window but kept a low CTR, so the page now answers dungeon, Dragon Tear, and prep intent earlier."
+    note: "This page now answers dungeon, Dragon Tear, and preparation intent earlier while holding exact loot claims for evidence."
   },
   {
     label: "Dragon Tear",

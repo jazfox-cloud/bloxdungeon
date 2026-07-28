@@ -66,7 +66,6 @@ function getPlan(bottleneck: Bottleneck, style: Style) {
       ],
       links: [
         { href: "/codes/", label: "Codes" },
-        { href: "/race-tier-list/", label: "Race Tier List" },
         { href: "/skill-tree/", label: "Skill Tree" }
       ]
     };
@@ -120,8 +119,8 @@ function getPlan(bottleneck: Bottleneck, style: Style) {
       ],
       links: [
         { href: "/skill-tree/", label: "Skill Tree" },
-        { href: "/attributes/", label: "Attributes" },
-        { href: "/runes/", label: "Runes" }
+        { href: "/dungeons/", label: "Dungeons" },
+        { href: "/forge/", label: "Forge" }
       ]
     };
   }

@@ -78,13 +78,13 @@ export default function ForgePage() {
 
         <h2>Long-Tail Forge Queries to Cover</h2>
         <p>
-          GSC still shows forge recipe as the strongest query family, with related crafting recipe, forging
-          guide, and short recipe variants. They belong on this page because the player intent is the same:
+          Forge recipe, crafting recipe, forging guide, and short recipe variants belong on this page
+          because the player intent is the same:
           understand the forge loop before trusting any exact material count.
         </p>
         <StatusTable rows={forgeLongTailRows} />
 
-        <h2>Forge Data Roadmap</h2>
+        <h2>Forge Evidence Status</h2>
         <StatusTable rows={forgeResearchRows} />
 
         <h2>Forge Recipe Tracker</h2>

@@ -3,19 +3,22 @@ import PageShell from "@/components/PageShell";
 import StatusTable from "@/components/StatusTable";
 import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon XP and Coin Grinding",
-  description: "Iron Soul: Dungeon grinding guide for XP and coins, with route notes and verification requirements for hourly rates or farming claims.",
-  path: "/grinding/",
-  keywords: ["iron soul dungeon xp grinding", "iron soul dungeon coin grinding", "iron soul dungeon farming"]
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Iron Soul: Dungeon Grinding Research Status",
+    description: "Non-indexed research status for future Iron Soul: Dungeon XP routes, coin routes, and farming evidence.",
+    path: "/grinding/",
+    keywords: ["iron soul dungeon xp grinding", "iron soul dungeon coin grinding", "iron soul dungeon farming"]
+  }),
+  robots: { index: false, follow: true }
+};
 
 export default function GrindingPage() {
   return (
     <PageShell
       eyebrow="Grinding"
-      title="Iron Soul: Dungeon XP and Coin Grinding"
-      description="A farming and progression hub for XP, coins, ore, and materials. Exact rates are marked pending until tested."
+      title="Iron Soul: Dungeon Grinding Research Status"
+      description="This non-indexed research page records what evidence is needed before publishing XP, coin, ore, or farming routes."
       path="/grinding/"
     >
       <div className="content">

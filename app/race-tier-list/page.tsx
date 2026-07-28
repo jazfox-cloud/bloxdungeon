@@ -11,22 +11,25 @@ import {
 } from "@/content/iron-soul";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Race Tier List, Tierlist, and Best Race",
-  description:
-    "Iron Soul: Dungeon race tier list, tierlist, best race, and race reroll hub with build context and verification status before public rankings.",
-  path: "/race-tier-list/",
-  keywords: [
-    "iron soul dungeon race tier list",
-    "iron soul dungeon tier list",
-    "iron soul dungeon tierlist",
-    "iron soul race tier list",
-    "iron soul race tierlist",
-    "best race iron soul dungeon",
-    "best races iron soul dungeon",
-    "iron soul race rerolls"
-  ]
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Iron Soul: Dungeon Race Tier List Research Status",
+    description:
+      "Non-indexed research status for future Iron Soul: Dungeon race tier list, best race, and race reroll evidence.",
+    path: "/race-tier-list/",
+    keywords: [
+      "iron soul dungeon race tier list",
+      "iron soul dungeon tier list",
+      "iron soul dungeon tierlist",
+      "iron soul race tier list",
+      "iron soul race tierlist",
+      "best race iron soul dungeon",
+      "best races iron soul dungeon",
+      "iron soul race rerolls"
+    ]
+  }),
+  robots: { index: false, follow: true }
+};
 
 export default function RaceTierListPage() {
   const faq = faqJsonLd([
@@ -48,8 +51,8 @@ export default function RaceTierListPage() {
   return (
     <PageShell
       eyebrow="Race Rerolls"
-      title="Iron Soul: Dungeon Race Tier List, Tierlist, and Best Race"
-      description="Race reroll, best-race, and tierlist demand are real, but rankings need evidence. This page is prepared for tier data once race effects and build context are verified."
+      title="Iron Soul: Dungeon Race Tier List Research Status"
+      description="This non-indexed research page records what evidence is needed before BloxDungeon publishes race rankings."
       path="/race-tier-list/"
     >
       <JsonLd data={faq} />
@@ -57,25 +60,22 @@ export default function RaceTierListPage() {
         <div className="notice warning">
           <strong>Tier rankings are pending verification.</strong>
           <p>
-            GSC review {gscReviewDate} for {gscCurrentWindow} shows the tier-list cluster lost visibility,
-            especially broad tier-list queries. We are tightening this page around race and reroll intent,
-            but we still do not publish S-tier or D-tier race claims until the race name, effect, and
-            testing context are traceable.
+            Race and reroll questions are real, but BloxDungeon does not publish S-tier or D-tier race
+            claims until the race name, effect, and testing context are traceable.
           </p>
         </div>
 
-        <h2>Search Recovery Focus</h2>
+        <h2>Future Reader Focus</h2>
         <p>
-          The page should win back the queries it can answer honestly: race tier list, best race, race rerolls,
-          and race effects. Broad weapon-tier or generic tier-list intent should be routed elsewhere instead
-          of weakening this page.
+          The future public page should answer race tier list, best race, race rerolls, and race effects.
+          Broad weapon-tier or generic tier-list intent should be routed elsewhere instead of weakening this page.
         </p>
         <StatusTable rows={raceRecoveryRows} />
 
         <h2>Race Long-Tail Variants</h2>
         <p>
-          GSC shows spaced and unspaced tier-list variants, plus best race and best races searches. The page
-          now covers those phrasings while keeping actual rankings blocked until race effects are verified.
+          Spaced and unspaced tier-list variants, plus best-race wording, should be handled only after actual
+          rankings can be backed by verified race effects.
         </p>
         <StatusTable rows={raceLongTailRows} />
 
@@ -91,7 +91,7 @@ export default function RaceTierListPage() {
 
         <h2>Why This Page Exists Early</h2>
         <p>
-          Search Console and YouTube-style search behavior show active demand for race rerolls and race rankings.
+          Player search behavior shows active demand for race rerolls and race rankings.
           Publishing the hub now lets the site collect and organize evidence before pretending the ranking is settled.
         </p>
 

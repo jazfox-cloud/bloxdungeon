@@ -3,19 +3,22 @@ import PageShell from "@/components/PageShell";
 import { gameSnapshot } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Updates and Patch Review",
-  description: "Iron Soul: Dungeon update tracking page with Roblox API update date, site review notes, and planned verification tasks.",
-  path: "/updates/",
-  keywords: ["iron soul dungeon update", "iron soul dungeon new update", "iron soul dungeon patch"]
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Iron Soul: Dungeon Updates Review Status",
+    description: "Non-indexed update review status with Roblox API update date and verification rules.",
+    path: "/updates/",
+    keywords: ["iron soul dungeon update", "iron soul dungeon new update", "iron soul dungeon patch"]
+  }),
+  robots: { index: false, follow: true }
+};
 
 export default function UpdatesPage() {
   return (
     <PageShell
       eyebrow="Updates"
-      title="Iron Soul: Dungeon Updates and Patch Review"
-      description="Update tracking for Iron Soul: Dungeon, including official Roblox updated date, code checks, and BloxDungeon review tasks."
+      title="Iron Soul: Dungeon Updates Review Status"
+      description="This non-indexed page tracks official update timestamps and the verification rules used before guide claims change."
       path="/updates/"
     >
       <div className="content">
@@ -38,7 +41,7 @@ export default function UpdatesPage() {
           rune effects, race effects, boss HP, or drop rates.
         </p>
 
-        <h2>Review Queue</h2>
+        <h2>Verification Checklist</h2>
         <ul>
           <li>Find official or community-visible patch notes.</li>
           <li>Verify whether new forge, rune, weapon, or race data changed.</li>

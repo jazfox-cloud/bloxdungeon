@@ -3,13 +3,16 @@ import PageShell from "@/components/PageShell";
 import { casualGames } from "@/content/iron-soul";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Roblox Casual Games to Play After Iron Soul Grinding",
-  description:
-    "A relaxed Roblox casual games guide for Iron Soul: Dungeon players who want a break from forging, grinding, rerolls, and dungeon routes.",
-  path: "/guide/casual-games/",
-  keywords: ["roblox casual games", "casual games", "best casual games in roblox"]
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Roblox Casual Games to Play After Iron Soul Grinding",
+    description:
+      "Non-indexed related guide for Iron Soul: Dungeon players who want a break from forging, grinding, rerolls, and dungeon routes.",
+    path: "/guide/casual-games/",
+    keywords: ["roblox casual games", "casual games", "best casual games in roblox"]
+  }),
+  robots: { index: false, follow: true }
+};
 
 export default function CasualGamesGuidePage() {
   const faq = faqJsonLd([

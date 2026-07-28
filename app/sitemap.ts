@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 const lastModified = new Date("2026-07-18");
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({
+  return routes.filter((route) => !("indexed" in route) || route.indexed !== false).map((route) => ({
     url: `${siteConfig.domain}${route.path}`,
     lastModified,
     changeFrequency: route.changeFrequency,

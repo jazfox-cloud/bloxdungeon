@@ -106,7 +106,7 @@ export default function MaterialsPage() {
         <h2>Future Drop Table Rules</h2>
         <p>
           BloxDungeon will not publish a drop table unless the material name, source, evidence type, and
-          last checked date are visible. That keeps the page useful for SEO without turning it into a copied
+          last checked date are visible. That keeps the page useful to players without turning it into a copied
           rumor list.
         </p>
         <StatusTable rows={[...verificationChecklist, ...evidenceGaps.filter((item) => ["Drop rates", "Recipe costs"].includes(item.label))]} />

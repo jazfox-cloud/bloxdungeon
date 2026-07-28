@@ -72,8 +72,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/tools/progression-planner/">Planner</Link>
               <Link href="/guide/">Guide</Link>
               <Link href="/forge/">Forge</Link>
-              <Link href="/runes/">Runes</Link>
-              <Link href="/race-tier-list/">Race Tier List</Link>
+              <Link href="/materials/">Materials</Link>
+              <Link href="/skill-tree/">Skill Tree</Link>
               <Link href="/sources/">Sources</Link>
               <a href="https://risingblox.com/">RisingBlox</a>
             </nav>

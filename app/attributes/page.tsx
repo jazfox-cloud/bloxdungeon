@@ -10,21 +10,24 @@ import {
 } from "@/content/iron-soul";
 import { faqJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Iron Soul: Dungeon Best Attributes, Stats, and Builds",
-  description:
-    "Iron Soul: Dungeon best attributes, best stats, and build-direction guide for attack, forge master, and survivor-style builds with verified-data boundaries.",
-  path: "/attributes/",
-  keywords: [
-    "iron soul dungeon attributes",
-    "iron soul dungeon best attributes",
-    "iron soul dungeon best stats",
-    "iron soul dungeon stats",
-    "iron soul attributes",
-    "iron soul stats",
-    "iron soul dungeon best build"
-  ]
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Iron Soul: Dungeon Attributes Research Status",
+    description:
+      "Non-indexed research status for future Iron Soul: Dungeon attributes, stats, formulas, and build-direction evidence.",
+    path: "/attributes/",
+    keywords: [
+      "iron soul dungeon attributes",
+      "iron soul dungeon best attributes",
+      "iron soul dungeon best stats",
+      "iron soul dungeon stats",
+      "iron soul attributes",
+      "iron soul stats",
+      "iron soul dungeon best build"
+    ]
+  }),
+  robots: { index: false, follow: true }
+};
 
 export default function AttributesPage() {
   const faq = faqJsonLd([
@@ -43,8 +46,8 @@ export default function AttributesPage() {
   return (
     <PageShell
       eyebrow="Attributes"
-      title="Iron Soul: Dungeon Best Attributes, Stats, and Builds"
-      description="Plan your best stats and build direction around attack, forging, or survival while exact attribute formulas remain under verification."
+      title="Iron Soul: Dungeon Attributes Research Status"
+      description="This non-indexed research page keeps build-direction notes while exact attribute formulas remain under verification."
       path="/attributes/"
     >
       <JsonLd data={faq} />
@@ -52,24 +55,22 @@ export default function AttributesPage() {
         <div className="notice">
           <strong>Best-stats demand exists, but formulas are not verified.</strong>
           <p>
-            GSC review {gscReviewDate} for {gscCurrentWindow} still shows impressions for attributes,
-            best attributes, and best stats. This page answers the build decision without inventing point
-            spreads, caps, or damage formulas.
+            Attribute and best-stat questions are real, but this page stays out of search until point
+            spreads, caps, and damage formulas can be verified.
           </p>
         </div>
 
-        <h2>Search Opportunity This Week</h2>
+        <h2>Reader Question This Page Can Answer Later</h2>
         <p>
-          The page is already ranking around position 7 for the attributes cluster, so the next improvement
-          is clearer matching for "best attributes" and "best stats" queries while keeping the evidence line
-          visible.
+          The eventual public page should answer "best attributes" and "best stats" directly while keeping
+          the evidence line visible.
         </p>
         <StatusTable rows={attributeOpportunityRows} />
 
         <h2>Stats and Build Long-Tail Coverage</h2>
         <p>
-          The latest GSC pull shows best attributes, stats, and best build variants. This page should answer
-          the stats wording directly, then route broader build decisions to the Builds guide.
+          Best attributes, stats, and build variants should be answered as role-based planning until exact
+          formulas are sourced.
         </p>
         <StatusTable rows={attributeLongTailRows} />
 
