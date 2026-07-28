@@ -123,6 +123,12 @@ Main navigation removals: `/runes/`, `/race-tier-list/`.
 - GA4/Consent Mode regression: existing tests passed.
 - AdSense script/ads.txt regression: existing tests passed.
 - Production pre-fix crawl: 23 sitemap URLs with low-value signals observed.
+- Production deployment URL: `https://307c2cd7.bloxdungeon.pages.dev`.
+- Production custom domain check: `https://bloxdungeon.com/sitemap.xml` returns 15 URLs and excludes newly held pages.
+- Production noindex check: `/runes/`, `/best-runes/`, `/attributes/`, `/builds/`, `/race-tier-list/`, `/grinding/`, `/updates/`, and `/guide/casual-games/` return `noindex, follow`.
+- Production `robots.txt`: returns 200 and links `https://bloxdungeon.com/sitemap.xml`.
+- Production `ads.txt`: returns 200 and contains `google.com, pub-2134598094429002, DIRECT, f08c47fec0942fa0`.
+- Crawler simulation: Googlebot, Mediapartners-Google, and AdsBot-Google fetched the 15-URL sitemap successfully.
 
 ## Human Actions
 
