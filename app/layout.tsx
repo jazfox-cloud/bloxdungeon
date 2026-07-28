@@ -3,6 +3,7 @@ import Link from "next/link";
 import "./globals.css";
 import { AnalyticsConsentDefaults, AnalyticsConsentManager } from "@/components/AnalyticsConsent";
 import { siteConfig } from "@/content/site";
+import { defaultOgImage } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
@@ -26,12 +27,14 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     url: siteConfig.domain,
     siteName: siteConfig.name,
-    type: "website"
+    type: "website",
+    images: [defaultOgImage]
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
-    description: siteConfig.description
+    description: siteConfig.description,
+    images: [defaultOgImage.url]
   },
   robots: {
     index: true,

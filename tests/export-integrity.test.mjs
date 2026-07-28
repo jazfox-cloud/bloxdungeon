@@ -8,10 +8,44 @@ const routeFile = (pathname) => pathname === "/" ? "out/index.html" : `out${path
 
 const sitemap = read("out/sitemap.xml");
 const sitemapUrls = [...sitemap.matchAll(/<loc>(https:\/\/bloxdungeon\.com[^<]+)<\/loc>/g)].map((match) => match[1]);
+const expectedSitemapUrls = [
+  "https://bloxdungeon.com/",
+  "https://bloxdungeon.com/codes/",
+  "https://bloxdungeon.com/guide/",
+  "https://bloxdungeon.com/tools/progression-planner/",
+  "https://bloxdungeon.com/forge/",
+  "https://bloxdungeon.com/dungeons/",
+  "https://bloxdungeon.com/skill-tree/",
+  "https://bloxdungeon.com/materials/",
+  "https://bloxdungeon.com/runes/",
+  "https://bloxdungeon.com/best-runes/",
+  "https://bloxdungeon.com/attributes/",
+  "https://bloxdungeon.com/builds/",
+  "https://bloxdungeon.com/race-tier-list/",
+  "https://bloxdungeon.com/level-up-fast/",
+  "https://bloxdungeon.com/grinding/",
+  "https://bloxdungeon.com/updates/",
+  "https://bloxdungeon.com/guide/casual-games/",
+  "https://bloxdungeon.com/sources/",
+  "https://bloxdungeon.com/about/",
+  "https://bloxdungeon.com/contact/",
+  "https://bloxdungeon.com/privacy-policy/",
+  "https://bloxdungeon.com/terms/",
+  "https://bloxdungeon.com/disclaimer/"
+];
+const defaultOgImageUrl = "https://bloxdungeon.com/og/bloxdungeon-og.png";
+
+function pngSize(path) {
+  const png = readFileSync(new URL(path, root));
+  assert.equal(png.toString("ascii", 1, 4), "PNG");
+  return {
+    width: png.readUInt32BE(16),
+    height: png.readUInt32BE(20)
+  };
+}
 
 test("sitemap contains only canonical, indexable pages", () => {
-  assert.ok(sitemapUrls.length >= 20);
-  assert.ok(sitemapUrls.includes("https://bloxdungeon.com/disclaimer/"));
+  assert.deepEqual(sitemapUrls, expectedSitemapUrls);
   assert.ok(!sitemapUrls.includes("https://bloxdungeon.com/weapons/"));
   assert.ok(!sitemapUrls.includes("https://bloxdungeon.com/relics/"));
 
@@ -22,6 +56,24 @@ test("sitemap contains only canonical, indexable pages", () => {
     const html = read(file);
     assert.match(html, new RegExp(`<link rel="canonical" href="${url.replaceAll("/", "\\/")}"`));
     assert.doesNotMatch(html, /<meta name="robots" content="noindex/i);
+  }
+});
+
+test("default Open Graph image is exported at the approved size", () => {
+  assert.ok(existsSync(new URL("out/og/bloxdungeon-og.png", root)));
+  assert.deepEqual(pngSize("out/og/bloxdungeon-og.png"), { width: 1200, height: 630 });
+});
+
+test("every sitemap page has one complete default Open Graph and Twitter image set", () => {
+  for (const url of sitemapUrls) {
+    const html = read(routeFile(new URL(url).pathname));
+    assert.deepEqual([...html.matchAll(/<meta property="og:image" content="([^"]+)"/g)].map((match) => match[1]), [defaultOgImageUrl], `og:image mismatch on ${url}`);
+    assert.match(html, /<meta property="og:image:width" content="1200"/);
+    assert.match(html, /<meta property="og:image:height" content="630"/);
+    assert.match(html, /<meta property="og:image:alt" content="BloxDungeon brand sharing image for codes, guides, and progression tools"/);
+    assert.deepEqual([...html.matchAll(/<meta name="twitter:image" content="([^"]+)"/g)].map((match) => match[1]), [defaultOgImageUrl], `twitter:image mismatch on ${url}`);
+    assert.match(html, /<meta name="twitter:card" content="summary_large_image"/);
+    assert.doesNotMatch(html, /<meta (?:property|name)="(?:og:image|twitter:image)" content="http:\/\//);
   }
 });
 

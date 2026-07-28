@@ -8,6 +8,14 @@ type PageMeta = {
   keywords?: string[];
 };
 
+export const defaultOgImage = {
+  url: `${siteConfig.domain}/og/bloxdungeon-og.png`,
+  width: 1200,
+  height: 630,
+  alt: "BloxDungeon brand sharing image for codes, guides, and progression tools",
+  type: "image/png"
+} as const;
+
 export function pageMetadata({ title, description, path, keywords }: PageMeta): Metadata {
   const canonical = `${siteConfig.domain}${path}`;
   return {
@@ -22,12 +30,14 @@ export function pageMetadata({ title, description, path, keywords }: PageMeta): 
       description,
       url: canonical,
       siteName: siteConfig.name,
-      type: "article"
+      type: "article",
+      images: [defaultOgImage]
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description
+      description,
+      images: [defaultOgImage.url]
     }
   };
 }

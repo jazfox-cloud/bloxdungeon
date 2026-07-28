@@ -90,5 +90,5 @@ test("interactive and recovery controls are marked as ad-exclusion zones", () =>
 
 test("media inventory contains only the local favicon", () => {
   const media = walk("public/").filter((file) => /\.(?:png|jpe?g|webp|gif|svg|mp3|wav|mp4|webm)$/i.test(file));
-  assert.deepEqual(media, ["public/favicon.svg"]);
+  assert.deepEqual(media, ["public/favicon.svg", "public/og/bloxdungeon-og.png"]);
 });
