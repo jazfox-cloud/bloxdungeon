@@ -17,7 +17,13 @@ export const metadata: Metadata = {
     "google-adsense-account": "ca-pub-2134598094429002"
   },
   icons: {
-    icon: "/favicon.svg"
+    icon: [
+      { url: "/brand/favicon-32.png?v=3", type: "image/png", sizes: "32x32" },
+      { url: "/brand/favicon-16.png?v=3", type: "image/png", sizes: "16x16" },
+      { url: "/favicon.ico?v=3", type: "image/x-icon" }
+    ],
+    shortcut: "/favicon.ico?v=3",
+    apple: "/brand/favicon-32.png?v=3"
   },
   alternates: {
     canonical: "/"
