@@ -2,13 +2,14 @@
   "name": "bloxdungeon",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "node node_modules/next/dist/bin/next dev",
     "build": "node node_modules/next/dist/bin/next build",
     "start": "node node_modules/next/dist/bin/next start",
     "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
     "lint": "npm run typecheck",
-    "test": "node --test tests/adsense-readiness.test.mjs",
+    "test": "node --test tests/adsense-readiness.test.mjs tests/event-lifecycle.test.mts",
     "test:export": "node --test tests/export-integrity.test.mjs"
   },
   "dependencies": {
