@@ -69,6 +69,24 @@ test("GA4 uses the approved measurement ID behind consent and production guards"
   assert.deepEqual([...allSource.matchAll(/G-[A-Z0-9]+/g)].map((match) => match[0]), ["G-VXZ1G44LSD"]);
 });
 
+test("planner result clicks use the shared consent-gated GA4 path with low-cardinality parameters", () => {
+  const analytics = read("components/AnalyticsConsent.tsx");
+  const planner = read("components/ProgressionPlanner.tsx");
+
+  assert.match(analytics, /planner_result_click/);
+  assert.match(analytics, /const bottleneck = target\.dataset\.analyticsBottleneck/);
+  assert.match(analytics, /const style = target\.dataset\.analyticsStyle/);
+  assert.match(analytics, /const resultTarget = target\.dataset\.analyticsTarget/);
+  assert.match(analytics, /gtag\("event", "planner_result_click", \{\s*bottleneck,\s*style,\s*target: resultTarget,/);
+  assert.match(analytics, /transport_type:\s*"beacon"/);
+
+  assert.match(planner, /data-analytics-planner-result/);
+  assert.match(planner, /data-analytics-bottleneck=\{bottleneck\}/);
+  assert.match(planner, /data-analytics-style=\{style\}/);
+  assert.match(planner, /data-analytics-target=/);
+  assert.doesNotMatch(planner, /G-[A-Z0-9]+|googletagmanager|gtag\(/);
+});
+
 test("AdSense verification, loader, and ads.txt use the approved publisher ID", () => {
   const files = ["app/", "components/", "content/", "lib/", "public/"]
     .flatMap(walk)

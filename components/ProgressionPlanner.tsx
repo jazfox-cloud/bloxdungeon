@@ -192,9 +192,28 @@ export default function ProgressionPlanner() {
           ))}
         </ol>
         <div className="button-row" data-ad-exclusion-zone="planner-results-and-actions">
-          <a className="button primary" href={plan.primary}>{plan.primaryLabel}</a>
+          <a
+            className="button primary"
+            data-analytics-planner-result
+            data-analytics-bottleneck={bottleneck}
+            data-analytics-style={style}
+            data-analytics-target={plan.primary}
+            href={plan.primary}
+          >
+            {plan.primaryLabel}
+          </a>
           {plan.links.map((link) => (
-            <a className="button" href={link.href} key={link.href}>{link.label}</a>
+            <a
+              className="button"
+              data-analytics-planner-result
+              data-analytics-bottleneck={bottleneck}
+              data-analytics-style={style}
+              data-analytics-target={link.href}
+              href={link.href}
+              key={link.href}
+            >
+              {link.label}
+            </a>
           ))}
         </div>
       </div>

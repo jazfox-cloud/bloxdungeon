@@ -119,13 +119,32 @@ export function AnalyticsConsentManager() {
   }, [queuePageView]);
 
   useEffect(() => {
-    const trackContentSelection = (event: MouseEvent) => {
+    const trackAnalyticsClick = (event: MouseEvent) => {
       if (choice !== "analytics_granted" || !isProductionHost()) {
         return;
       }
 
-      const target = event.target instanceof Element ? event.target.closest<HTMLElement>("[data-analytics-content]") : null;
+      const target = event.target instanceof Element
+        ? event.target.closest<HTMLElement>("[data-analytics-planner-result], [data-analytics-content]")
+        : null;
       if (!target) {
+        return;
+      }
+
+      if (target.hasAttribute("data-analytics-planner-result")) {
+        const bottleneck = target.dataset.analyticsBottleneck;
+        const style = target.dataset.analyticsStyle;
+        const resultTarget = target.dataset.analyticsTarget;
+        if (!bottleneck || !style || !resultTarget) {
+          return;
+        }
+
+        gtag("event", "planner_result_click", {
+          bottleneck,
+          style,
+          target: resultTarget,
+          transport_type: "beacon"
+        });
         return;
       }
 
@@ -142,8 +161,8 @@ export function AnalyticsConsentManager() {
       });
     };
 
-    document.addEventListener("click", trackContentSelection);
-    return () => document.removeEventListener("click", trackContentSelection);
+    document.addEventListener("click", trackAnalyticsClick);
+    return () => document.removeEventListener("click", trackAnalyticsClick);
   }, [choice]);
 
   const saveChoice = useCallback((nextChoice: ConsentChoice) => {
