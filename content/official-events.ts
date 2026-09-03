@@ -1,7 +1,7 @@
 export const officialEventSnapshot = {
-  datasetVersion: "2026-09-02.1",
-  verifiedAtUtc: "2026-09-02T08:53:33Z",
-  officialGameUpdatedAtUtc: "2026-09-01T12:57:48.7846728Z",
+  datasetVersion: "2026-09-03.1",
+  verifiedAtUtc: "2026-09-03T03:01:42Z",
+  officialGameUpdatedAtUtc: "2026-09-01T12:57:48.784Z",
   sourceUrl:
     "https://apis.roblox.com/virtual-events/v1/universes/9910245722/virtual-events?fromUtc=1970-01-01T00%3A00%3A00.000Z",
   sourceType: "Roblox official public virtual-events API; verified Iron Soul group host",
